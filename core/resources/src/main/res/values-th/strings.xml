@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+  tools:ignore="MissingTranslation">
+
+  <!-- AndroidIDE -->
+  <string name="cfg_installed_ndk_version">เวอร์ชัน NDK ที่ติดตั้ง: %s</string>
+  <string name="cfg_installed_cmake_version">เวอร์ชัน CMake ที่ติดตั้ง: %s</string>
+
+  <!-- General messages -->
+  <string name="updater_no_updates_available">ไม่มีการอัปเดต</string>
+  <string name="updater_check_failed">ตรวจสอบการอัปเดตล้มเหลว</string>
+  <string name="updater_changelog_failed">ไม่สามารถโหลดบันทึกการเปลี่ยนแปลงได้</string>
+  <string name="updater_changelog_error">เกิดข้อผิดพลาดในการดึงข้อมูลบันทึกการเปลี่ยนแปลง</string>
+  <string name="updater_no_compatible_update">ไม่พบการอัปเดตที่เข้ากันได้สำหรับอุปกรณ์ของคุณ</string>
+  <string name="updater_download_failed">การดาวน์โหลดล้มเหลว</string>
+  <string name="updater_download_failed_with_error">การดาวน์โหลดล้มเหลว: %s</string>
+  <string name="updater_installation_failed">การติดตั้งล้มเหลว</string>
+  <string name="updater_cannot_open_browser">ไม่สามารถเปิดเบราว์เซอร์ได้</string>
+
+  <!-- Dialog titles and buttons -->
+  <string name="updater_update_available">มีการอัปเดต</string>
+  <string name="updater_download">ดาวน์โหลด</string>
+  <string name="updater_view_in_browser">ดูในเบราว์เซอร์</string>
+  <string name="updater_later">ภายหลัง</string>
+  <string name="updater_cancel">ยกเลิก</string>
+  <string name="updater_downloading_update">กำลังดาวน์โหลดการอัปเดต</string>
+
+  <!-- Update dialog content -->
+  <string name="updater_new_version_available">มีเวอร์ชันใหม่ %s พร้อมใช้งาน!</string>
+  <string name="updater_current_architecture">สถาปัตยกรรมอุปกรณ์: %s</string>
+  <string name="updater_target_version_code">รหัสเวอร์ชันเป้าหมาย: %d</string>
+  <string name="updater_available_variants">รูปแบบที่พร้อมใช้งาน: %s</string>
+
+  <!-- Progress and status messages -->
+  <string name="updater_preparing_download">กำลังเตรียมการดาวน์โหลด…</string>
+  <string name="updater_progress_format">%d MB / %d MB</string>
+  <string name="updater_enable_install_permission">โปรดเปิดใช้งาน \'ติดตั้งแอปที่ไม่รู้จัก\' แล้วลองอีกครั้ง</string>
+
+  <!-- Log messages -->
+  <string name="updater_http_error">ข้อผิดพลาด HTTP: %d</string>
+  <string name="updater_fetch_error">ข้อผิดพลาดในการดึงข้อมูลการอัปเดต</string>
+  <string name="updater_parse_error">ข้อผิดพลาดในการแยกวิเคราะห์ข้อมูลการอัปเดต</string>
+  <string name="updater_version_check_log">เวอร์ชันปัจจุบัน: %d, เวอร์ชันที่พร้อมใช้งาน: %d สำหรับสถาปัตยกรรม: %s</string>
+  <string name="updater_no_compatible_variant">ไม่พบรูปแบบที่เข้ากันได้สำหรับสถาปัตยกรรม: %s</string>
+  <string name="updater_package_not_found">ไม่พบแพ็คเกจ</string>
+  <string name="updater_supported_abis">ABIs ที่รองรับ: %s</string>
+  <string name="updater_unknown_arch_fallback">ไม่พบสถาปัตยกรรมที่รู้จัก จะใช้ armeabi-v7a เป็นค่าเริ่มต้น</string>
+  <string name="updater_device_arch">สถาปัตยกรรมอุปกรณ์: %s</string>
+  <string name="updater_trying_fallbacks">ไม่พบการจับคู่ที่แน่นอนสำหรับ %s กำลังลองใช้ทางเลือกอื่น</string>
+  <string name="updater_using_arm32_fallback">ใช้ทางเลือก armeabi-v7a สำหรับ arm64-v8a</string>
+  <string name="updater_using_x86_fallback">ใช้ทางเลือก x86 สำหรับ x86_64</string>
+  <string name="updater_using_first_variant">ไม่พบการจับคู่สถาปัตยกรรมที่แน่นอน จะใช้รูปแบบแรกที่มีอยู่</string>
+  <string name="updater_download_error">ข้อผิดพลาดในการดาวน์โหลด APK</string>
+  <string name="updater_download_apk_error">ข้อผิดพลาดในการดาวน์โหลด APK</string>
+  <string name="updater_install_error">ข้อผิดพลาดในการติดตั้ง APK</string>
+  <string name="updater_browser_error">ข้อผิดพลาดในการเปิดเบราว์เซอร์</string>
+
+  <!-- AI Agent Gemini -->
+  <string name="ai_agent_title">ตัวแทน AI</string>
+  <string name="ai_agent_description">รับการสร้างโค้ดด้วยพลัง AI โดยใช้ตัวแทน AI</string>
+  <string name="ai_agent_prompt_hint">อธิบายโค้ดที่คุณต้องการสร้าง...</string>
+  <string name="ai_agent_send">ส่ง</string>
+  <string name="ai_agent_settings">การตั้งค่า</string>
+  <string name="ai_agent_instructions">ป้อนคำขอของคุณแล้ว AI จะสร้างโค้ดให้คุณ ตรวจสอบให้แน่ใจว่าได้กำหนดค่าคีย์ API ของ Gemini ในการตั้งค่าแล้ว</string>
+  <string name="ai_agent_enable">เปิดใช้งานตัวแทน AI</string>
+  <string name="ai_agent_enable_summary">เปิดใช้งานการสร้างโค้ดด้วยพลัง AI</string>
+  <string name="ai_agent_api_key">คีย์ API ของ Gemini</string>
+  <string name="ai_agent_api_key_summary">ป้อนคีย์ API ของ Google Gemini เพื่อใช้ฟีเจอร์ AI</string>
+  <string name="ai_agent_api_key_dialog_title">ป้อนคีย์ API ของ Gemini</string>
+
+  <!-- AI Agent Deepseek -->
+  <string name="ai_agent_deepseek_api_key">คีย์ API ของ Deepseek</string>
+  <string name="ai_agent_deepseek_api_key_summary">ป้อนคีย์ API ของ Deepseek เพื่อใช้ฟีเจอร์ AI</string>
+  <string name="ai_agent_deepseek_api_key_dialog_title">ป้อนคีย์ API ของ Deepseek</string>
+
+  <!-- AI Agent OpenAI -->
+  <string name="ai_agent_openai_api_key">คีย์ API ของ OpenAI</string>
+  <string name="ai_agent_openai_api_key_summary">ป้อนคีย์ API ของ OpenAI เพื่อใช้ฟีเจอร์ AI</string>
+  <string name="ai_agent_openai_api_key_dialog_title">ป้อนคีย์ API ของ OpenAI</string>
+
+  <!-- AI Agent anthropic -->
+  <string name="ai_agent_anthropic_api_key">คีย์ API ของ Anthropic</string>
+  <string name="ai_agent_anthropic_api_key_summary">ป้อนคีย์ API ของ Anthropic เพื่อใช้ฟีเจอร์ AI</string>
+  <string name="ai_agent_anthropic_api_key_dialog_title">ป้อนคีย์ API ของ Anthropic</string>
+
+  <!-- AI Agent grok -->
+  <string name="ai_agent_grok_api_key">คีย์ API ของ Grok</string>
+
+  <string name="no_acs_title">ขาดส่วนประกอบ ACS</string>
+  <string name="no_acs_summary">แอปพลิเคชันนี้ดูเหมือนจะไม่สมบูรณ์หรือไม่เป็นทางการ เนื่องจากขาดระบบสร้าง ACS ที่จำเป็น สำหรับฟังก์ชันการทำงานเต็มรูปแบบ โปรดติดตั้ง Android Code Studio อย่างเป็นทางการจากแหล่งที่เชื่อถือได้</string>
+
+  <string name="no_internet">ไม่มีการเชื่อมต่ออินเทอร์เน็ต</string>
+  <string name="btn_proceed_str">ดำเนินการต่อ</string>
+
+  <string name="acs_install_title">ระบบสร้าง ACS</string>
+  <string name="acs_ask_install_message">คุณแน่ใจหรือไม่ว่าต้องการติดตั้ง %1$s?</string>
+
+  <string
+    name="copy"
+    tools:override="true">คัดลอก</string>
+  <string name="terminal_more">เพิ่มเติม…</string>
+  <string name="text_to_search">ข้อความที่จะค้นหา</string>
+  <string
+    name="app_name"
+    translatable="false">Android Code Studio</string>
+  <string
+    name="app_name_dcm"
+    translatable="false">Rv2IDE</string>
+  <string name="about_option_email">อีเมล</string>
+  <string name="about_option_website">เว็บไซต์</string>
+  <string
+    name="about_footer_alternate"
+    translatable="false">Android Code Studio v\u2022 %s</string>
+  <string name="about_footer">Android Code Studio%1$s สำหรับ %2$s</string>
+  <string name="about_subtitle">แค่ IDE สำหรับ Android</string>
+  <string name="msg_get_package_failed">ล้มเหลวในการแยกชื่อแพ็คเกจ!</string>
+  <string name="msg_need_help">หากคุณประสบปัญหาขณะใช้ Android Code Studio หรือการสร้างแอป Android คุณสามารถเข้าร่วมกลุ่ม Telegram เพื่อขอความช่วยเหลือที่นั่น\n\nคุณยังสามารถส่งข้อเสนอแนะทางอีเมลของเราได้อีกด้วย</string>
+  <string
+    name="title_github"
+    translatable="false">GitHub</string>
+  <string name="need_help">ต้องการความช่วยเหลือ?</string>
+  <string name="ide_preferences">การตั้งค่า IDE</string>
+  <string name="discussions_on_telegram">การสนทนาบน Telegram</string>
+  <string name="official_tg_channel">ช่อง Telegram อย่างเป็นทางการ</string>
+  <string name="msg_empty_view">ไม่มีข้อมูล</string>
+  <string name="title_terminal">เทอร์มินัล</string>
+  <string name="reset">รีเซ็ต</string>
+  <string name="app_logs">บันทึกแอป</string>
+  <string name="ide_logs">บันทึก IDE</string>
+  <string name="title_enable_ide_logs">เปิดใช้งานบันทึก IDE</string>
+  <string name="msg_enable_ide_logs">หากเลือก บันทึก IDE จะถูกเปิดใช้งาน</string>
+  <string name="msg_ide_logs_disabled">บันทึกถูกปิดใช้งาน \nหากต้องการเปิดใช้งานอีกครั้ง ให้ไปที่ การตั้งค่า -> ตัวเลือกสำหรับนักพัฒนา และเลือกสวิตช์ "บันทึก IDE"</string>
+  <string name="terminal_bstab">เทอร์มินัล</string>
+  <!-- AndroidIDE-R -->
+  <string name="discussions_on_qq">การสนทนาบน QQ</string>
+  <string name="idepref_installViaShizuku_title">ติดตั้งผ่าน Shizuku</string>
+  <string name="idepref_installViaShizuku_summary">หากเปิดใช้งาน IDE จะทำการติดตั้งแบบเงียบผ่าน Shizuku โปรดตรวจสอบให้แน่ใจว่าติดตั้งและเปิดใช้งาน Shizuku แล้ว</string>
+
+
+  <!-- LSP, Diagnostics & Completions -->
+  <string name="get_started">เริ่มต้นใช้งาน</string>
+  <string name="msg_cannot_perform_fix">ไม่สามารถดำเนินการแก้ไขด่วนได้</string>
+  <string name="msg_performing_actions">กำลังดำเนินการกับโค้ด…</string>
+  <string name="msg_api_info_since">ตั้งแต่ API %d</string>
+  <string name="msg_api_info_removed">ถูกลบออกใน API %d</string>
+  <string name="msg_api_info_deprecated">เลิกใช้แล้วใน API %d</string>
+  <string name="msg_finding_references">กำลังค้นหาการอ้างอิง…</string>
+  <string name="msg_finding_definition">กำลังค้นหาคำจำกัดความ…</string>
+  <string name="msg_no_definition">ไม่พบคำจำกัดความ</string>
+
+  <!-- Build Tools Installation -->
+  <string name="msg_no_references">ไม่พบการอ้างอิง</string>
+  <string name="view_diags">การวินิจฉัย</string>
+  <string name="title_installation_failed">การติดตั้งล้มเหลว</string>
+  <string name="msg_picked_isnt_dir">ไฟล์ที่เลือกไม่ใช่ไดเร็กทอรี!</string>
+  <string name="please_wait">กรุณารอสักครู่…</string>
+
+  <!-- Project Builder -->
+  <string name="title_unsupported_device">อุปกรณ์ไม่รองรับ</string>
+  <string name="msg_unsupported_device">คุณกำลังใช้ Android Code Studio รุ่น %1$s บนอุปกรณ์ %2$s เท่านั้น การกำหนดค่านี้นี้ไม่ได้รับการสนับสนุน โปรดติดตั้ง Android Code Studio รุ่น %2$s</string>
+  <string name="title_clear_output">ล้างผลลัพธ์</string>
+  <string name="build_output">ผลลัพธ์การสร้าง</string>
+  <string name="quick_run_debug">รันด่วน</string>
+  <string name="msg_sync_needed">ไฟล์ Gradle มีการเปลี่ยนแปลง โปรดสร้างโปรเจกต์ของคุณใหม่เพื่อซิงค์การพึ่งพาและการกำหนดค่า</string>
+  <string name="preparing">กำลังเตรียมการ</string>
+  <string name="preparing_first">กำลังเตรียมการ การสร้างครั้งแรกอาจใช้เวลาถึง 10–15 นาที!</string>
+  <string name="msg_installing_gradlew">ไม่มี Gradle Wrapper!\nกำลังติดตั้งค่าเริ่มต้น Gradle v7.4 จะถูกดาวน์โหลดหากจำเป็น</string>
+  <string name="run">รัน</string>
+  <string
+    name="gradle"
+    translatable="false">Gradle</string>
+
+  <!-- Project -->
+  <string name="title_first_build">การสร้างครั้งแรก</string>
+  <string name="msg_first_build">นี่คือการสร้างครั้งแรกหลังจากที่คุณติดตั้ง Android Code Studio การสร้างครั้งแรกมักใช้เวลาเนื่องจาก Gradle ดาวน์โหลดการพึ่งพาและปลั๊กอินทั้งหมด กระบวนการนี้อาจใช้เวลาประมาณ 10–15 นาที แต่ขึ้นอยู่กับการเชื่อมต่อเครือข่ายของคุณ\n\nโปรดอดทนรอ …</string>
+  <string name="create_project">สร้างโปรเจกต์</string>
+  <string name="minimum_sdk">SDK ขั้นต่ำ</string>
+  <string name="new_project">โปรเจกต์ใหม่</string>
+  <string name="package_name">ชื่อแพ็คเกจ</string>
+  <string name="project_app_name">ชื่อแอป</string>
+  <string name="msg_create_new_project_greeting">เริ่มโปรเจกต์ใหม่ที่ยอดเยี่ยมของคุณ!</string>
+  <string name="title_confirm_open_project">เปิดโปรเจกต์ล่าสุดหรือไม่?</string>
+  <string name="msg_confirm_open_project">คุณต้องการเปิดโปรเจกต์ที่เปิดล่าสุดหรือไม่? โปรเจกต์ที่เปิดคือ:\n%s</string>
+
+  <string name="title_close_project">ปิดโปรเจกต์นี้</string>
+  <string name="msg_opened_project_does_not_exist">โปรเจกต์ที่เปิดล่าสุดไม่มีอยู่จริง!</string>
+  <string name="msg_create_new_project">สร้างโปรเจกต์ใหม่</string>
+  <string name="msg_open_existing_project">เปิดโปรเจกต์ที่มีอยู่</string>
+  <string name="title_confirm_project_close">ปิดโปรเจกต์</string>
+
+  <string name="open_project">เปิดโปรเจกต์</string>
+  <string name="search_projects_hint">ค้นหาโปรเจกต์…</string>
+  <string name="no_projects_found">ไม่พบโปรเจกต์\nสร้างโปรเจกต์ใหม่หรือเรียกดูเพื่อเปิดโปรเจกต์ที่มีอยู่</string>
+  <string name="no_projects_match_search">ไม่มีโปรเจกต์ที่ตรงกับการค้นหาของคุณ</string>
+  <string name="browse_other_location">เรียกดูตำแหน่งอื่น</string>
+  <string name="recent_badge">ล่าสุด</string>
+
+  <string name="delete_project_title">ลบโปรเจกต์?</string>
+  <string name="delete_project_message">คุณแน่ใจหรือไม่ว่าต้องการลบ \"%1$s\"?\n\nการดำเนินการนี้จะลบไฟล์ทั้งหมดในโปรเจกต์นี้อย่างถาวร การดำเนินการนี้ไม่สามารถยกเลิกได้</string>
+  <string name="delete">ลบ</string>
+  <string name="project_deleted_success">ลบโปรเจกต์สำเร็จแล้ว</string>
+  <string name="project_delete_failed">ล้มเหลวในการลบโปรเจกต์</string>
+  <string name="backup_success">สำรองข้อมูลเสร็จสมบูรณ์</string>
+
+  <string name="rename_project">เปลี่ยนชื่อโปรเจกต์</string>
+  <string name="new_project_name">ชื่อโปรเจกต์ใหม่</string>
+  <string name="rename">เปลี่ยนชื่อ</string>
+  <string name="error">ข้อผิดพลาด</string>
+  <string name="invalid_name">ชื่อไม่ถูกต้อง</string>
+  <string name="invalid_project_name_message">ชื่อโปรเจกต์ต้องขึ้นต้นด้วยตัวอักษรและประกอบด้วยตัวอักษร ตัวเลข และขีดล่างเท่านั้น</string>
+  <string name="name_already_exists">ชื่อมีอยู่แล้ว</string>
+  <string name="project_name_exists_message">มีโปรเจกต์ชื่อ \'%1$s\' อยู่แล้วในตำแหน่งนี้</string>
+  <string name="project_renamed_success">เปลี่ยนชื่อโปรเจกต์สำเร็จแล้ว</string>
+  <string name="project_rename_failed">ล้มเหลวในการเปลี่ยนชื่อโปรเจกต์</string>
+
+  <string name="idepref_enableBuildOutput_title">เปิดใช้งานผลลัพธ์การสร้าง</string>
+  <string name="idepref_enableBuildOutput_summary">แสดงผลลัพธ์การสร้างในตัวแก้ไข</string>
+
+  <string name="idepref_dependencies_updater_title">ตัวอัปเดตการพึ่งพา</string>
+  <string name="idepref_dependencies_updater_summary">
+      แสดงกล่องโต้ตอบการอัปเดตเมื่อเปิด build.gradle(.kts) ซึ่งจะอัปเดตการพึ่งพาที่ประกาศโดยอัตโนมัติ
+  </string>
+
+  <string name="idepref_kotlin_indexing_notif_title">แบนเนอร์การแจ้งเตือน Kotlin</string>
+  <string name="idepref_kotlin_indexing_notif_summary">
+      แสดงแบนเนอร์การแจ้งเตือนเมื่อโปรเจกต์ Kotlin กำลังถูกจัดทำดัชนีโดย Kotlin Language Server
+  </string>
+
+  <string name="closing_project">กำลังปิดโปรเจกต์</string>
+
+  <string name="include_test_str">รวมการทดสอบ Android</string>
+  <string name="use_cmake">ใช้ระบบสร้าง CMake</string>
+  <string name="native_language">ภาษาเนทีฟ</string>
+
+
+  <string name="ndk_version_auto">NDK: อัตโนมัติ</string>
+  <string name="native_error_title">ต้องใช้ NDK</string>
+  <string name="error_ndk_not_found_or_incompatible">ไม่พบการติดตั้ง NDK หรือเข้ากันไม่ได้ โปรดติดตั้ง NDK จากการตั้งค่า IDE</string>
+  <string name="open_ide_cfg_msg">เปิดการตั้งค่า</string>
+
+  <!-- ATC Options Dialog -->
+  <string name="choose_template">เลือกเทมเพลต</string>
+  <string name="project_configuration">การกำหนดค่าโปรเจกต์</string>
+
+  <string name="project_name">ชื่อโปรเจกต์</string>
+  <string name="project_location">ที่ตั้งโปรเจกต์</string>
+  <string name="browse">เรียกดู</string>
+  <string name="language">ภาษา</string>
+  <string name="java">Java</string>
+  <string name="use_gradle_kotlin_dsl">ใช้ Gradle Kotlin DSL (.kts)</string>
+  <string name="cancel">ยกเลิก</string>
+  <string name="create">สร้าง</string>
+  <string name="default_project_name">MyApplication</string>
+  <string name="default_package_name">com.example.myapplication</string>
+  <string name="back">กลับ</string>
+
+
+         <!-- Templates -->
+  <string name="msg_confirm_project_close">คุณแน่ใจหรือไม่ว่าต้องการปิดโปรเจกต์นี้? Daemon ของ Gradle ที่เริ่มต้นทั้งหมดจะถูกหยุดหลังจากปิดโปรเจกต์นี้</string>
+  <string name="template_basic">โปรเจกต์พื้นฐาน</string>
+  <string name="template_empty">โปรเจกต์ว่างเปล่า</string>
+  <string name="template_cpp">โปรเจกต์ C++</string>
+  <string name="template_navigation_drawer">โปรเจกต์ลิ้นชักการนำทาง</string>
+  <string
+    name="template_compose"
+    translatable="false">Jetpack Compose</string>
+  <string name="template_navigation_tabs">กิจกรรมการนำทางด้านล่าง</string>
+  <string name="template_tabs">กิจกรรมแบบแท็บ</string>
+  <string name="template_no_activity">ไม่มีกิจกรรม</string>
+  <string name="template_no_AndroidX">ไม่มี AndroidX</string>
+
+  <!-- Files -->
+  <string name="save">บันทึก</string>
+  <string name="menu_find">ค้นหา</string>
+  <string name="menu_find_file">ค้นหาในไฟล์</string>
+  <string name="menu_find_project">ค้นหาในโปรเจกต์</string>
+  <string name="msg_search_modules">ค้นหาในโมดูล</string>
+  <string name="msg_no_modules">ไม่พบโมดูลในโปรเจกต์</string>
+  <string name="hint_find_project_filter">กรองนามสกุลไฟล์ (ไม่บังคับ)</string>
+  <string name="msg_find_project_filter">คั่นด้วย \'|\'</string>
+  <string name="msg_empty_search_query">โปรดป้อนข้อความ</string>
+  <string name="msg_select_search_modules">เลือกโมดูลที่จะค้นหา</string>
+  <string name="msg_searching_project">กำลังค้นหาในโปรเจกต์ โปรดรอสักครู่…</string>
+  <string name="view_search_results">ผลการค้นหา</string>
+  <string name="project_created_successfully">สร้างโปรเจกต์สำเร็จแล้ว!</string>
+  <string name="project_creation_failed">ล้มเหลวในการสร้างโปรเจกต์</string>
+  <string name="msg_folder_creation_failed">ล้มเหลวในการสร้างโฟลเดอร์!</string>
+  <string name="msg_file_creation_failed">ล้มเหลวในการสร้างไฟล์!</string>
+  <string name="msg_layout_file_creation_failed">ล้มเหลวในการสร้างไฟล์เลย์เอาต์!</string>
+  <string name="msg_folder_created">สร้างโฟลเดอร์สำเร็จแล้ว!</string>
+  <string name="msg_file_created">สร้างไฟล์สำเร็จแล้ว!</string>
+  <string name="msg_folder_exists">มีโฟลเดอร์นี้อยู่แล้ว!</string>
+  <string name="msg_file_exists">มีไฟล์นี้อยู่แล้ว!</string>
+  <string name="msg_layout_file_exists">มีไฟล์เลย์เอาต์นี้อยู่แล้ว!</string>
+  <string name="msg_invalid_name">ชื่อไม่ถูกต้อง!</string>
+  <string name="text_create">สร้าง</string>
+  <string name="msg_can_contain_slashes">หากพาธมีตัวคั่นไฟล์ (\'/\') ไดเร็กทอรี (หลัก) ที่จำเป็นจะถูกสร้างขึ้นหากยังไม่มี</string>
+  <string name="folder_name">ชื่อโฟลเดอร์</string>
+  <string name="file_name">ชื่อไฟล์</string>
+  <string name="new_name">ชื่อใหม่</string>
+  <string name="new_file">ไฟล์ใหม่</string>
+  <string name="create_auto_layout">สร้างไฟล์เลย์เอาต์</string>
+  <string name="new_java_class">คลาส Java ใหม่</string>
+  <string name="choose_language">เลือกภาษา</string>
+  <string name="new_kotlin_class">คลาส Kotlin ใหม่</string>
+
+  <string name="new_xml_resource">ทรัพยากร XML ใหม่</string>
+  <string name="new_folder">โฟลเดอร์ใหม่</string>
+  <string name="title_confirm_delete">ยืนยันการลบ</string>
+  <string name="msg_confirm_delete">คุณแน่ใจหรือไม่ว่าต้องการลบ:\n%s?</string>
+  <string name="copied">คัดลอกสำเร็จแล้ว!</string>
+  <string name="msg_rename_file">ป้อนชื่อใหม่สำหรับไฟล์/โฟลเดอร์</string>
+  <string name="renamed">เปลี่ยนชื่อสำเร็จแล้ว!</string>
+  <string name="rename_failed">ไม่สามารถเปลี่ยนชื่อไฟล์ได้!</string>
+  <string name="deleted">ลบสำเร็จแล้ว!</string>
+  <string name="delete_failed">ไม่สามารถลบไฟล์ได้!</string>
+  <string name="copy_path">คัดลอกพาธ</string>
+  <string name="rename_file">เปลี่ยนชื่อ</string>
+  <string name="delete_file">ลบ</string>
+  <string name="action_closeAll">ปิดทั้งหมด</string>
+  <string name="action_closeOthers">ปิดอื่นๆ</string>
+  <string name="action_closeThis">ปิดรายการนี้</string>
+  <string name="all_saved">บันทึกไฟล์ทั้งหมดแล้ว!</string>
+  <string name="save_failed">ล้มเหลวในการบันทึกไฟล์</string>
+  <string name="msg_newfile_dest">ปลายทาง: %s/</string>
+  <string name="restype_drawable">Drawable</string>
+  <string name="restype_layout">Layout</string>
+  <string name="restype_menu">Menu</string>
+  <string name="restype_other">อื่นๆ</string>
+  <string name="classtype_class">Class</string>
+  <string name="classtype_activity">Activity</string>
+  <string name="title_interface">Interface</string>
+  <string name="classtype_enum">Enum</string>
+  <string name="msg_failed_list_files">ล้มเหลวในการแสดงรายการไฟล์โปรเจกต์!</string>
+
+  <!-- Code Editor -->
+  <string name="open_with">เปิดด้วย...</string>
+
+  <string name="undo">เลิกทำ</string>
+  <string name="redo">ทำซ้ำ</string>
+
+  <!-- Preferences -->
+  <string name="title_change_text_size">ขนาดตัวอักษรของตัวแก้ไข</string>
+  <string name="idepref_about_title">เกี่ยวกับ Android Code Studio</string>
+  <string name="idepref_build_clearCache_title">ล้างแคช Gradle</string>
+  <string name="idepref_build_clearCache_summary">ล้างไดเร็กทอรีแคช Gradle การดำเนินการนี้จะลบการพึ่งพาทั้งหมดที่ดาวน์โหลดโดย Gradle ไฟล์ที่จำเป็นจะถูกดาวน์โหลดอีกครั้งในการสร้างครั้งถัดไป</string>
+  <string name="idepref_build_customgradlecommands_title">คำสั่ง Gradle เพิ่มเติม</string>
+  <string name="idepref_build_customgradlecommands_summary">เลือกคำสั่งเพิ่มเติมที่จะเพิ่มในขณะที่ดำเนินการทุกงาน</string>
+  <string name="idepref_editor_fontsize_title">ขนาดตัวอักษร</string>
+  <string name="idepref_editor_fontsize_summary">ขนาดตัวอักษรของตัวแก้ไข</string>
+  <string name="idepref_editor_syntax_engine_title">เครื่องยนต์ไวยากรณ์</string>
+  <string name="idepref_editor_syntax_engine_summary">เลือกตัวเน้นข้อความที่ตัวแก้ไขควรใช้</string>
+  <string name="idepref_editor_syntax_engine_tree_sitter">Tree-sitter (แบบเพิ่มหน่วย)</string>
+  <string name="idepref_editor_syntax_engine_textmate">TextMate (อิงตาม regex)</string>
+  <string name="idepref_editor_paintingflags_title">แฟล็กการวาดอักขระที่ไม่สามารถพิมพ์ได้</string>
+  <string name="idepref_editor_paintingflags_summary">เลือกอักขระที่ไม่สามารถพิมพ์ได้ที่ควรวาดโดยตัวแก้ไข</string>
+  <string name="idepref_editor_word_wrap_title">ตัดคำ</string>
+  <string name="idepref_editor_word_wrap_summary">ใช้การตัดคำของตัวแก้ไข</string>
+  <string name="idepref_editor_use_magnifier_title">เปิดใช้งานแว่นขยาย</string>
+  <string name="idepref_editor_use_magnifier_summary">ขยายข้อความที่ตำแหน่งเคอร์เซอร์ขณะเลือกข้อความในตัวแก้ไข</string>
+  <string name="idepref_editor_title">ตัวแก้ไข</string>
+  <string name="idepref_build_title">สร้างและรัน</string>
+  <string name="title_open_projects">เปิดโปรเจกต์ล่าสุด</string>
+  <string name="msg_open_projects">หากเลือก IDE จะจดจำโปรเจกต์ที่เปิดล่าสุดและจะเปิดใหม่ในการเริ่มต้นครั้งถัดไป</string>
+  <string name="title_confirm_project_open">ยืนยันการเปิดโปรเจกต์</string>
+  <string name="msg_confirm_project_open">ถามก่อนเปิดโปรเจกต์ที่เปิดล่าสุด</string>
+  <string name="title_default_shell">ใช้เชลล์ระบบในเทอร์มินัล</string>
+  <string name="msg_default_shell">หากเลือก \'/system/bin/sh\' จะถูกใช้ในเทอร์มินัล</string>
+  <string name="title_general">ทั่วไป</string>
+  <string name="title_tab_size">ขนาดแท็บ</string>
+  <string name="msg_tab_size">ระบุจำนวนช่องว่างสำหรับ TAB</string>
+  <string name="msg_preferences">การตั้งค่า</string>
+  <string name="pref_changelog">บันทึกการเปลี่ยนแปลง</string>
+  <string name="msg_editor_font_size">โปรดเลือกขนาดตัวอักษรเริ่มต้นของตัวแก้ไข :</string>
+  <string name="msg_clear_cache">การดำเนินการนี้จะลบไดเร็กทอรีแคชที่สร้างโดย Gradle หากคุณลบ การสร้างครั้งถัดไปอาจใช้เวลานานกว่าปกติเล็กน้อยเนื่องจาก Gradle จะดาวน์โหลดไฟล์ที่จำเป็นอีกครั้ง\n\nคุณแน่ใจหรือไม่ว่าต้องการลบแคช?</string>
+
+  <!-- Error Messages used while Logging -->
+
+  <!-- Layout preview and designer -->
+  <string name="title_preview_layout">ดูตัวอย่างเลย์เอาต์</string>
+  <string name="title_viewaction_delete">ลบ</string>
+  <string name="msg_yesno_def_title">โปรดยืนยัน</string>
+  <string name="msg_yesno_def_message">คุณแน่ใจหรือไม่?</string>
+  <string name="msg_empty_ui_layout">ยังไม่มีการเพิ่มมุมมอง คลิกเพื่อเพิ่ม</string>
+  <string name="msg_generate_xml_failed">ล้มเหลวในการสร้างโค้ด XML</string>
+  <string name="title_generating_xml">กำลังสร้างโค้ด XML</string>
+  <string name="msg_swipe_up">ปัดขึ้นหรือคลิกเพื่อดูผลลัพธ์การสร้าง บันทึก และอื่นๆ</string>
+  <string name="msg_ide_crashed">Android Code Studio ขัดข้อง</string>
+  <string name="msg_report_crash">โปรดเปิดปัญหาบน github ด้วย stacktrace ต่อไปนี้ :</string>
+  <string name="msg_crash_report_hint">คลิกที่ปุ่มด้านล่างเพื่อคัดลอกบันทึกและเปิดหน้าปัญหา</string>
+  <string name="msg_copy_report_action">คัดลอกและรายงาน</string>
+  <string name="title_translations">การแปล</string>
+  <string name="action_expand_selection">ขยายการเลือก</string>
+  <string name="idepref_java_matchLower_title">จับคู่การเติมเต็มในตัวพิมพ์เล็ก</string>
+  <string name="title_common">ทั่วไป</string>
+  <string
+    name="idepref_editor_category_common"
+    translatable="false">@string/title_common</string>
+  <string
+    name="idepref_editor_category_java"
+    translatable="false">Java</string>
+  <string name="title_files_unsaved">ไฟล์ที่ยังไม่ได้บันทึก</string>
+  <string name="msg_files_unsaved">บางไฟล์ยังไม่ได้บันทึก คุณต้องการบันทึกก่อนปิดหรือไม่? ไฟล์ที่ยังไม่ได้บันทึกคือ: \n%s</string>
+  <string name="idepref_editor_autoSave_title">บันทึกก่อนปิดไฟล์</string>
+  <string name="idepref_editor_autoSave_summary">บันทึกไฟล์ก่อนปิด นี่เป็นฟีเจอร์ทดลอง คุณควรบันทึกไฟล์ด้วยตนเอง</string>
+  <string name="idepref_java_matchLower_summary">หากเปิดใช้งาน การพิมพ์ตัวอักษรพิมพ์เล็กหรือพิมพ์ใหญ่จะแนะนำชื่อคลาสรวมถึงสมาชิกขอบเขต</string>
+  <string name="idepref_editor_ligatures_title">Ligatures ของแบบอักษร</string>
+  <string name="idepref_editor_ligatures_summary">เปิด/ปิดใช้งาน Ligatures ของแบบอักษร</string>
+
+  <string name="idepref_editor_autosave_title">บันทึกอัตโนมัติ</string>
+  <string name="idepref_editor_autosave_summary">บันทึกการแก้ไขทั้งหมดโดยอัตโนมัติทุกๆ 2 วินาทีเพื่อป้องกันข้อมูลสูญหายในกรณีที่แอปพลิเคชันยุติการทำงานโดยไม่คาดคิด</string>
+
+  <string name="idepref_editor_keyboard_sugg_title">แสดงคำแนะนำแป้นพิมพ์</string>
+  <string name="idepref_editor_keyboard_sugg_summary">เปิดหรือปิดใช้งานคำแนะนำแป้นพิมพ์ขณะพิมพ์ในตัวแก้ไข</string>
+
+  <string name="idepref_editor_string_ext_helper_title">ตัวแยกสตริง</string>
+  <string name="idepref_editor_string_ext_helper_summary">จัดเตรียมเมนูตามบริบทสำหรับการแยกทรัพยากรสตริงอัตโนมัติจากซอร์สโค้ด ปรับปรุงการแปลเป็นภาษาท้องถิ่นโดยย้ายข้อความฮาร์ดโค้ดโดยตรงไปยัง `strings.xml` เข้ากันได้กับไฟล์ Kotlin, Java และ XML</string>
+
+  <string name="yes">ใช่</string>
+  <string name="no">ไม่</string>
+  <string name="msg_viewaction_add_attr">เพิ่มแอตทริบิวต์</string>
+  <string name="msg_file_tree">โครงสร้างไฟล์</string>
+  <string name="hint_attr_value">ค่าแอตทริบิวต์</string>
+  <string name="title_format_code">จัดรูปแบบโค้ด</string>
+  <string name="idepref_java_useGoogleStyle_title">ใช้การจัดรูปแบบโค้ด Google Java Style</string>
+  <string name="idepref_java_useGoogleStyle_summary">ใช้การกำหนดค่าการจัดรูปแบบโค้ด Google Java Style สำหรับจัดรูปแบบซอร์สโค้ด Java</string>
+  <string name="idepref_visiblePassword_title">แฟล็กรหัสผ่านที่มองเห็นได้</string>
+  <string name="idepref_visiblePassword_summary">ใช้สำหรับแฟล็กประเภทอินพุตรหัสผ่านที่มองเห็นได้ในตัวแก้ไข เพื่อให้แน่ใจว่าไม่มีการเสนอคำแนะนำโดยแป้นพิมพ์ซอฟต์</string>
+  <string name="previous">ก่อนหน้า</string>
+  <string name="title_gradle_service_notification_ticker">เริ่มบริการสร้าง Gradle แล้ว</string>
+  <string name="title_gradle_service_notification">บริการสร้าง Gradle</string>
+  <string name="title_cancel_build">ยกเลิกการสร้าง</string>
+  <string name="msg_initializing_project">กำลังเริ่มต้นโปรเจกต์</string>
+  <string name="msg_project_initialized">เริ่มต้นโปรเจกต์แล้ว</string>
+  <string name="msg_project_initialization_failed">เริ่มต้นโปรเจกต์ล้มเหลว</string>
+  <string name="msg_project_not_initialized">โปรเจกต์ยังไม่ได้เริ่มต้น</string>
+  <string name="msg_replacement">การแทนที่</string>
+  <string name="title_sync_project">ซิงค์โปรเจกต์</string>
+  <string name="wizard_save_location">บันทึกตำแหน่ง</string>
+  <string name="wizard_language">ภาษาโปรเจกต์</string>
+  <string name="next">ถัดไป</string>
+  <string name="exit">ออก</string>
+  <string name="idepref_title_customGradleInstallation">การติดตั้ง Gradle แบบกำหนดเอง</string>
+  <string name="idepref_msg_customGradleInstallation">ระบุการติดตั้ง Gradle แบบกำหนดเองเพื่อใช้สำหรับการสร้าง สิ่งนี้จะแทนที่เวอร์ชันที่ระบุใน gradle-wrapper.properties</string>
+  <string name="msg_gradle_installation_path">เส้นทางการติดตั้ง Gradle</string>
+  <string name="msg_gradle_installation_input_help">เว้นว่างไว้เพื่อใช้ Gradle wrapper</string>
+
+  <string name="build_status_idle">ไม่มีการสร้างที่กำลังดำเนินการ</string>
+  <string name="build_status_in_progress">กำลังดำเนินการสร้าง…</string>
+  <string name="build_status_failed">การสร้างล้มเหลว ดูรายละเอียดเพิ่มเติมในผลลัพธ์การสร้าง</string>
+  <string name="build_status_sucess">การสร้างสำเร็จ</string>
+  <string name="msg_output_text_extraction_failed">ล้มเหลวในการรับข้อความจากตัวแก้ไข</string>
+  <string name="err_invalid_data_by_intent">Intent ส่งคืนข้อมูลที่ไม่ถูกต้อง</string>
+  <string name="msg_select_from_primary_storage">เลือกไดเร็กทอรีจากที่จัดเก็บข้อมูลหลัก</string>
+  <string name="err_authority_not_allowed">ไม่อนุญาต Authority \'%s\'</string>
+  <string name="idepref_useIcu_title">ใช้ไลบรารี ICU</string>
+  <string name="idepref_useIcu_summary">ใช้ไลบรารี ICU เพื่อดึงขอบคำสำหรับการเลือกคำด้วยการแตะสองครั้งและกดค้าง</string>
+
+  <string name="sidebar_git_title">ไคลเอนต์ Git</string>
+  <string name="sidebar_git_settings_msg">การตั้งค่า</string>
+  <string name="sidebar_git_history_msg">ประวัติ</string>
+  <string name="sidebar_git_branches_msg">สาขา</string>
+  <string name="sidebar_git_remotes_msg">รีโมท</string>
+  <string name="sidebar_git_changes_msg">การเปลี่ยนแปลง</string>
+
+
+  <!--The text sorrounded with '@@' is spanned as clickable.-->
+  <!--There must be exactly two '@@' sorrounding the text that should be clickable.-->
+  <string name="msg_drawer_for_files">เปิดลิ้นชักด้านซ้ายสำหรับ @@files@@</string>
+  <string name="msg_swipe_for_output">ปัดขึ้นสำหรับ @@build output@@</string>
+  <string name="idepref_editor_useSoftTabs_title">ใช้ soft tab</string>
+  <string name="idepref_editor_useSoftTabs_summary">เลือกว่าจะใช้ช่องว่างแทนอักขระแท็บ (\\t) หรือไม่</string>
+  <string name="btn_idecfg">การกำหนดค่า IDE</string>
+  <string name="btn_docs">เอกสารประกอบ</string>
+  <string name="btn_close">ปิด</string>
+  <string name="msg_ignore_case">ละเว้นตัวพิมพ์เล็กใหญ่</string>
+  <string name="msg_use_regex">ใช้ regex</string>
+  <string name="idepref_buildnrun_summary">กำหนดค่าการสร้าง Gradle</string>
+  <string name="configure">กำหนดค่า</string>
+  <string name="about">เกี่ยวกับ</string>
+  <string name="idepref_github_summary">AndroidIDE เป็นโอเพนซอร์ส!</string>
+  <string name="idepref_channel_summary">สมัครสมาชิกเพื่อรับการอัปเดตล่าสุด</string>
+  <string name="idepref_group_summary">พูดคุยเกี่ยวกับฟีเจอร์ ข้อบกพร่อง และการปรับปรุงที่นี่</string>
+  <string name="idepref_changelog_summary">มีอะไรใหม่ในเวอร์ชันนี้?</string>
+  <string name="idepref_about_summary">เพิ่มเติมเกี่ยวกับ Android Code Studio</string>
+  <string name="idepref_general_summary">การกำหนดค่า IDE ทั่วไป</string>
+  <string name="idepref_editor_summary">กำหนดค่าตัวแก้ไข</string>
+  <string
+    name="xml"
+    translatable="false">XML</string>
+  <string name="idepref_xml_trimFinalNewLine_title">ตัดบรรทัดใหม่สุดท้าย</string>
+  <string name="idepref_xml_insertFinalNewLine_title">แทรกบรรทัดใหม่สุดท้าย</string>
+  <string name="idepref_xml_trimFinalNewLine_summary">ลบบรรทัดว่างส่วนเกินที่ท้ายไฟล์</string>
+  <string name="idepref_xml_insertFinalNewLine_summary">แทรกบรรทัดใหม่ว่างที่ท้ายไฟล์</string>
+  <string name="idepref_xml_splitAttributes_title">แยกแอตทริบิวต์</string>
+  <string name="idepref_xml_splitAttributes_summary">จัดรูปแบบแอตทริบิวต์ในบรรทัดใหม่</string>
+  <string name="idepref_xml_joinCDataLines_title">รวมบรรทัด CDATA</string>
+  <string name="idepref_xml_joinCDataLines_summary">ทำให้เนื้อหาภายใน CDATA เป็นปกติ</string>
+  <string name="idepref_xml_joinComment_title">รวมบรรทัดความคิดเห็น</string>
+  <string name="idepref_xml_joinComment_summary">ทำให้เนื้อหาภายในความคิดเห็นเป็นปกติ</string>
+  <string name="idepref_xml_joinContent_title">รวมบรรทัดเนื้อหา</string>
+  <string name="idepref_xml_joinContent_summary">ทำให้เนื้อหาภายในองค์ประกอบเป็นปกติ</string>
+  <string name="idepref_xml_spaceBeforeEmptyClose_title">ช่องว่างก่อนปิดแท็กว่าง</string>
+  <string name="idepref_xml_spaceBeforeEmptyClose_summary">แทรกช่องว่างก่อนวงเล็บปิดแท็กปิดตัวเอง</string>
+  <string name="idepref_xml_preserveEmptyContent_title">รักษาเนื้อหาว่าง</string>
+  <string name="idepref_xml_preserveEmptyContent_summary">รักษาเนื้อหาว่างภายในองค์ประกอบ (ช่องว่าง, บรรทัดใหม่, แท็บ, ฯลฯ)</string>
+  <string name="idepref_xml_preserveAttrLineBreaks_title">รักษาตัวแบ่งบรรทัดแอตทริบิวต์</string>
+  <string name="idepref_xml_preserveAttrLineBreaks_summary">รักษาตัวแบ่งบรรทัดระหว่างแอตทริบิวต์</string>
+  <string name="idepref_xml_closingBrackNewLine_title">วงเล็บปิดในบรรทัดใหม่</string>
+  <string name="idepref_xml_closingBrackNewLine_summary">วางวงเล็บปิดในบรรทัดใหม่</string>
+  <string name="idepref_xml_trimTrailingWs_title">ตัดช่องว่างต่อท้าย</string>
+  <string name="idepref_xml_trimTrailingWs_summary">ลบช่องว่างส่วนเกินที่ท้ายบรรทัด</string>
+  <string name="idepref_maxLineWidth_title">ความกว้างบรรทัดสูงสุด</string>
+  <string name="idepref_maxLineWidth_summary">จำนวนอักขระสูงสุดที่บรรทัดควรมี</string>
+  <string name="idepref_splitAttrIndentSize_title">ขนาดการเยื้องแอตทริบิวต์ที่แยก</string>
+  <string name="idepref_splitAttrIndentSize_summary">จำนวนช่องว่างที่จะจัดทำดัชนีสำหรับแอตทริบิวต์ที่แยก</string>
+  <string name="idepref_preservedNewLines_title">บรรทัดใหม่ที่รักษาไว้</string>
+  <string name="idepref_preservedNewLines_summary">จำนวนตัวแบ่งบรรทัดต่อเนื่องสูงสุดที่ควรได้รับการรักษาไว้</string>
+  <string name="idepref_emptyElements_title">พฤติกรรมองค์ประกอบว่าง</string>
+  <string name="idepref_emptyElements_summary">เลือกพฤติกรรมการจัดรูปแบบสำหรับองค์ประกอบว่าง</string>
+
+  <string name="xml_formatting_options">ตัวเลือกการจัดรูปแบบ XML</string>
+  <string name="xml_formatting_options_summary">กำหนดค่าตัวจัดรูปแบบ XML</string>
+
+  <string name="idepref_customFont_title">ใช้แบบอักษรที่กำหนดเอง</string>
+  <string name="idepref_customFont_summary">หากเปิดใช้งาน ไฟล์ที่ \"/data/data/com.tom.rv2ide/files/home/.androidide/ui/font.ttf\" จะถูกใช้เป็นแบบอักษรของตัวแก้ไข</string>
+  <string name="msg_installing_apk">กำลังติดตั้ง APK...</string>
+  <string name="msg_action_open_application">คุณต้องการเปิดแอปพลิเคชันหรือไม่?</string>
+
+
+  <string name="servers">เซิร์ฟเวอร์</string>
+  <string name="lsp_options">โปรโตคอล Language Server</string>
+  <string name="lsp_options_summary">กำหนดค่าและติดตั้งเซิร์ฟเวอร์</string>
+
+  <string name="lsp_installed_title">ติดตั้งสำเร็จแล้ว</string>
+  <string name="lsp_installed_summary">การติดตั้งเสร็จสมบูรณ์!</string>
+  <string name="project_contians_clang_title">โปรเจกต์ของคุณมีไฟล์ C/C++ คุณต้องการติดตั้ง Clang language server หรือไม่?</string>
+  <string name="project_contians_kotlin_title">โปรเจกต์ของคุณมีไฟล์ Kotlin คุณต้องการติดตั้ง Kotlin language server หรือไม่?</string>
+  <string name="installing_lsp">กำลังติดตั้ง Language Server</string>
+  <string name="lsp_setup_str">การติดตั้ง Language Server</string>
+  <string name="lsp_install_str">ติดตั้ง</string>
+
+  <string name="lsp_options_kotlin_title">Kotlin Language Server</string>
+  <string name="lsp_options_kotlin_summary">เซิร์ฟเวอร์ภาษา Kotlin ให้คุณสมบัติการเขียนโค้ดอัจฉริยะรวมถึงการเติมโค้ด การเน้นข้อผิดพลาด และอื่นๆ</string>
+  <string name="kotlin_server_required">ต้องติดตั้ง Kotlin language server เพื่อใช้ฟีเจอร์นี้</string>
+
+  <string name="lsp_options_c_cpp_title">C &amp; C++ Language Server</string>
+  <string name="lsp_options_c_cpp_summary">เซิร์ฟเวอร์ภาษา C และ C++ ให้คุณสมบัติการพัฒนาอัจฉริยะ เช่น การเติมโค้ด การเน้นข้อผิดพลาด และอื่นๆ</string>
+
+  <string name="acs_lsp_hover_title">ข้อมูลโค้ดเมื่อวางเมาส์เหนือ</string>
+  <string name="acs_lsp_hover_summary">แสดงประเภท ลายเซ็นฟังก์ชัน และเอกสารประกอบเมื่อวางเมาส์เหนือโค้ด</string>
+
+  <string name="acs_lsp_diagnostics_title">การวินิจฉัยโค้ด</string>
+  <string name="acs_lsp_diagnostics_summary">แสดงข้อผิดพลาดและคำเตือนขณะที่คุณพิมพ์</string>
+
+  <string name="acs_lsp_kotlin_code_style_title">รูปแบบโค้ด</string>
+  <string name="acs_lsp_kotlin_code_style_summary">รูปแบบการจัดรูปแบบที่ต้องการ</string>
+
+  <string name="server_status">สถานะเซิร์ฟเวอร์: %s</string>
+
+  <string name="kotlin">Kotlin</string>
+  <string name="kotlin_lsp_category_summary">เซิร์ฟเวอร์ภาษา Kotlin และฟีเจอร์</string>
+  <string name="c_cpp">C/C++</string>
+  <string name="ccpp_lsp_category_summary">เซิร์ฟเวอร์ภาษา C/C++ และฟีเจอร์</string>
+
+  <!-- LSP Server Management -->
+  <string name="lsp_server_uninstall">ถอนการติดตั้ง</string>
+  <string name="lsp_server_uninstall_title">ถอนการติดตั้งเซิร์ฟเวอร์</string>
+  <string name="lsp_server_uninstall_message">คุณแน่ใจหรือไม่ว่าต้องการถอนการติดตั้งเซิร์ฟเวอร์ %s? การดำเนินการนี้ไม่สามารถยกเลิกได้</string>
+  <string name="lsp_server_uninstalling">กำลังถอนการติดตั้งเซิร์ฟเวอร์ %s</string>
+  <string name="lsp_server_please_wait">โปรดรอสักครู่…</string>
+  <string name="lsp_server_uninstall_success">ถอนการติดตั้งเซิร์ฟเวอร์ %s สำเร็จแล้ว!</string>
+  <string name="lsp_server_uninstall_failed">ล้มเหลวในการถอนการติดตั้งเซิร์ฟเวอร์ %s</string>
+  <string name="lsp_server_not_found">ไม่พบไดเร็กทอรีเซิร์ฟเวอร์ %s</string>
+  <string name="lsp_server_uninstall_error">ล้มเหลวในการถอนการติดตั้ง %s:\n%s</string>
+
+  <!-- LSP Server Download -->
+  <string name="lsp_server_preparing_download">กำลังเตรียมการดาวน์โหลด…</string>
+  <string name="lsp_server_downloading">กำลังดาวน์โหลดเซิร์ฟเวอร์ %s</string>
+  <string name="lsp_server_fetching_info">กำลังดึงข้อมูลเซิร์ฟเวอร์…</string>
+  <string name="lsp_server_no_download_link">ไม่มีลิงก์ดาวน์โหลดสำหรับ %s</string>
+  <string name="lsp_server_connecting">กำลังเชื่อมต่อกับเซิร์ฟเวอร์…</string>
+  <string name="lsp_server_downloading_status">กำลังดาวน์โหลด…</string>
+  <string name="lsp_server_progress_percentage">%d%%</string>
+  <string name="lsp_server_extracting">กำลังแตกไฟล์…</string>
+  <string name="lsp_server_install_success">ติดตั้งเซิร์ฟเวอร์ %s สำเร็จแล้ว!\nแตกไฟล์ %d ไฟล์</string>
+  <string name="lsp_server_download_failed">ล้มเหลวในการดาวน์โหลด %s:\n%s</string>
+
+  <!-- LSP Server Dialog Titles -->
+  <string name="lsp_server_error_title">การดาวน์โหลดล้มเหลว</string>
+  <string name="lsp_server_success_title">ดาวน์โหลดเสร็จสมบูรณ์</string>
+
+  <string name="title_gradle_service_notification_channel">บริการสร้าง Gradle ของ Android Code Studio</string>
+  <string name="msg_hex_color_code">รหัสสี Hex</string>
+  <string name="msg_color_picker_pick">เลือก</string>
+  <string name="msg_chmod_exec">กำลังตั้งค่าสิทธิ์การเรียกใช้งาน…</string>
+  <string name="msg_linking">กำลังเชื่อมโยง %1$s ไปยัง %2$s</string>
+  <string name="msg_extracting_hooks">กำลังแตกไลบรารี hook…</string>
+  <string name="msg_empty_package">ชื่อแพ็คเกจว่างเปล่า</string>
+  <string name="msg_package_is_not_valid">ชื่อแพ็คเกจไม่ถูกต้อง</string>
+  <string name="msg_package_is_to_long">ชื่อแพ็คเกจยาวเกินไป</string>
+  <string name="msg_package_not_valid_char_1">อักขระ \'_\' ไม่สามารถเป็นอักขระตัวแรกในส่วนของแพ็คเกจได้</string>
+  <string name="msg_package_not_use_digit_first">ตัวเลขไม่สามารถเป็นอักขระตัวแรกในส่วนของแพ็คเกจได้</string>
+  <string name="msg_package_not_valid_char_2">อักขระ "%1$s" ไม่อนุญาตในชื่อแพ็คเกจแอปพลิเคชัน Android</string>
+  <string name="msg_package_mus_have_dot">แพ็คเกจต้องมีตัวคั่น \'.\' อย่างน้อยหนึ่งตัว</string>
+
+  <string name="extract">แยกสตริงไปยัง strings.xml</string>
+  <string name="action_import_classes">นำเข้าคลาส</string>
+  <string name="action_generate_setters_getters">สร้าง setters/getters</string>
+  <string name="action_add_throws">เพิ่ม \'throws\'</string>
+  <string name="action_comment_line">คอมเมนต์บรรทัด</string>
+  <string name="action_create_missing_method">สร้างเมธอดที่หายไป</string>
+  <string name="action_convert_to_block">แปลงเป็นบล็อก</string>
+  <string name="action_generate_constructor">สร้างคอนสตรัคเตอร์</string>
+  <string name="action_implement_abstract_methods">ใช้เมธอดนามธรรม</string>
+  <string name="action_remove_class">ลบคลาส</string>
+  <string name="action_remove_method">ลบเมธอด</string>
+  <string name="action_remove_unused_throws">ลบ throws ที่ไม่ได้ใช้</string>
+  <string name="action_suppress_unchecked_warning">ระงับคำเตือน \'unchecked\'</string>
+  <string name="action_uncomment_line">ยกเลิกคอมเมนต์บรรทัด</string>
+  <string name="action_convert_to_statement">แปลงเป็นคำสั่ง</string>
+  <string name="msg_select_fields">เลือกฟิลด์</string>
+  <string name="msg_no_fields_selected">ไม่ได้เลือกฟิลด์</string>
+  <string name="msg_no_fields_found">ไม่พบฟิลด์</string>
+  <string name="action_override_superclass_methods">แทนที่เมธอดของ superclass</string>
+  <string name="msg_no_methods_selected">ไม่ได้เลือกเมธอด</string>
+  <string name="msg_cannot_override_methods">ไม่สามารถแทนที่เมธอดได้</string>
+  <string name="msg_cannot_generate_setters_getters">ไม่สามารถสร้าง setters และ getters ได้</string>
+  <string name="msg_select_methods">เลือกเมธอดที่จะแทนที่</string>
+  <string name="msg_no_overridable_methods">ไม่พบเมธอดที่สามารถแทนที่ได้</string>
+  <string name="action_goto_definition">ไปที่คำจำกัดความ</string>
+  <string name="action_find_references">ค้นหาการอ้างอิง</string>
+  <string name="action_generate_toString">สร้าง toString()</string>
+  <string name="action_remove_unused_imports">ลบการนำเข้าที่ไม่ได้ใช้</string>
+  <string name="action_organize_imports">จัดระเบียบการนำเข้า</string>
+  <string name="msg_cannot_generate_toString">ไม่สามารถสร้างการใช้งาน toString() ได้</string>
+  <string name="msg_toString_overridden">toString() ถูกแทนที่แล้ว</string>
+  <string name="action_generate_missing_constructor">สร้างคอนสตรัคเตอร์ที่หายไป</string>
+  <string name="msg_cannot_generate_constructor">ไม่สามารถสร้างคอนสตรัคเตอร์ได้</string>
+  <string name="msg_constructor_available">มีคอนสตรัคเตอร์ที่มีประเภทพารามิเตอร์เหมือนกันอยู่แล้ว</string>
+
+  <string name="replace">แทนที่</string>
+  <string name="replaceAll">แทนที่ทั้งหมด</string>
+  <string name="title_run_tasks">รันงาน</string>
+  <string name="hint_search_tasks">ค้นหางาน…</string>
+  <string name="msg_err_select_tasks">โปรดเลือกงานที่จะรัน</string>
+  <string name="title_confirmation">การยืนยัน</string>
+  <string name="msg_tasks_to_run">งานต่อไปนี้จะถูกดำเนินการตามลำดับ คลิกปุ่ม \'รัน\' อีกครั้งเพื่อยืนยัน\n\n%1$s</string>
+  <string name="msg_loading_tasks">กำลังโหลดงาน...</string>
+
+  <string name="title_snowfall_overlay">หิมะตก</string>
+  <string name="msg_snowfall_overlay">ภาพเคลื่อนไหวหิมะตก สิ้นสุดหลังวันที่ 5 มกราคม 2026</string>
+
+  <string name="updates_available">%s การอัปเดตการพึ่งพา</string>
+  <string name="you_have_new_dependency_update">คุณมีการอัปเดตการพึ่งพาใหม่</string>
+  <string name="skip_for_1_min">ข้ามไป 1 นาที</string>
+  <string name="update_all">อัปเดตทั้งหมด</string>
+  <string name="warning">คำเตือน</string>
+
+  <string
+    name="ui_category_widgets"
+    translatable="false">วิดเจ็ต</string>
+  <string
+    name="ui_category_layouts"
+    translatable="false">เลย์เอาต์</string>
+  <string
+    name="ui_category_google"
+    translatable="false">Google</string>
+
+  <string name="subtitle_desc">ไอเดียของคุณ ทุกที่</string>
+  <string name="btn_donate">บริจาค</string>
+
+  <string
+    name="widget_view"
+    translatable="false">View</string>
+  <string
+    name="widget_textview"
+    translatable="false">TextView</string>
+  <string
+    name="widget_text_view"
+    translatable="false">Material Text View</string>
+  <string
+    name="widget_button"
+    translatable="false">Button</string>
+  <string
+    name="widget_mbutton"
+    translatable="false">🆕 Material Button</string>
+  <string
+    name="widget_mcardview"
+    translatable="false">🆕 Material Card View</string>
+  <string
+    name="widget_checkbox"
+    translatable="false">CheckBox</string>
+  <string
+    name="widget_checked_textview"
+    translatable="false">CheckedTextView</string>
+  <string
+    name="widget_edittext"
+    translatable="false">🆕 Material EditText</string>
+  <string
+    name="widget_inputlayout"
+    translatable="false">🆕 Text Field Input Layout</string>
+  <string
+    name="widget_image_button"
+    translatable="false">ImageButton</string>
+  <string
+    name="widget_image_view"
+    translatable="false">ImageView</string>
+  <string
+    name="widget_progressbar"
+    translatable="false">ProgressBar</string>
+  <string
+    name="widget_radio_button"
+    translatable="false">RadioButton</string>
+  <string
+    name="widget_radio_group"
+    translatable="false">RadioGroup</string>
+  <string
+    name="widget_seekbar"
+    translatable="false">SeekBar</string>
+  <string
+    name="widget_spinner"
+    translatable="false">Spinner</string>
+  <string
+    name="widget_auto_complete_textview"
+    translatable="false">AutoCompleteTextView</string>
+  <string
+    name="widget_multi_auto_complete_textview"
+    translatable="false">MultiAutoCompleteTextView</string>
+  <string
+    name="widget_listview"
+    translatable="false">ListView</string>
+  <string
+    name="widget_surfaceview"
+    translatable="false">SurfaceView</string>
+  <string
+    name="widget_switch"
+    translatable="false">Switch</string>
+  <string
+    name="widget_mswitch"
+    translatable="false">Material Switch</string>
+  <string
+    name="widget_textureview"
+    translatable="false">TextureView</string>
+  <string
+    name="widget_togglebutton"
+    translatable="false">ToggleButton</string>
+  <string
+    name="widget_webview"
+    translatable="false">WebView</string>
+  <string
+    name="widget_frame_layout"
+    translatable="false">FrameLayout</string>
+  <string
+    name="widget_grid_layout"
+    translatable="false">GridLayout</string>
+  <string
+    name="widget_linear_layout_horz"
+    translatable="false">LinearLayout (H)</string>
+  <string
+    name="widget_linear_layout_vert"
+    translatable="false">LinearLayout (V)</string>
+
+  <string name="widget_constraint_layout" translatable="false">ConstraintLayout</string>
+
+  <string
+    name="widget_relative_layout"
+    translatable="false">RelativeLayout</string>
+  <string
+    name="widget_scrollview"
+    translatable="false">ScrollView</string>
+  <string
+    name="widget_horizontal_scrollview"
+    translatable="false">HorizontalScrollView</string>
+  <string
+    name="widget_text_clock"
+    translatable="false">TextClock</string>
+  <string
+    name="widget_digital_clock"
+    translatable="false">DigitalClock</string>
+  <string
+    name="widget_calendar_view"
+    translatable="false">CalendarView</string>
+  <string
+    name="widget_space"
+    translatable="false">Space</string>
+  <string
+    name="widget_number_picker"
+    translatable="false">NumberPicker</string>
+  <string
+    name="widget_chronometer"
+    translatable="false">Chronometer</string>
+  <string
+    name="widget_rating_bar"
+    translatable="false">RatingBar</string>
+  <string
+    name="widget_quick_contact_badge"
+    translatable="false">QuickContactBadge</string>
+  <string
+    name="widget_videoview"
+    translatable="false">VideoView</string>
+  <string
+    name="widget_analog_clock"
+    translatable="false">AnalogClock</string>
+  <string
+    name="widget_grid_view"
+    translatable="false">GridView</string>
+  <string
+    name="widget_viewanimator"
+    translatable="false">ViewAnimator</string>
+  <string
+    name="widget_viewswitcher"
+    translatable="false">ViewSwitcher</string>
+  <string
+    name="widget_textswitcher"
+    translatable="false">TextSwitcher</string>
+  <string
+    name="widget_imageswitcher"
+    translatable="false">ImageSwitcher</string>
+  <string
+    name="widget_viewflipper"
+    translatable="false">ViewFlipper</string>
+
+  <!-- GIT -->
+  <string name="git_clone">โคลน</string>
+  <string name="git_clone_repo">โคลนที่เก็บ git</string>
+  <string name="git_clone_repo_url">URL ของที่เก็บ</string>
+  <string name="git_clone_in_progress">กำลังโคลนที่เก็บ</string>
+  <string name="git_clone_success">โคลน Git สำเร็จ</string>
+  <string name="git_clone_failed">ล้มเหลวในการโคลนที่เก็บ git</string>
+  <string name="msg_select_attr">เลือกแอตทริบิวต์จากรายการด้านล่าง</string>
+  <string name="action_show_hierarchy">แสดงลำดับชั้นของเลย์เอาต์</string>
+  <string name="idepref_editor_colorScheme">ชุดสี</string>
+  <string name="idepref_editor_colorScheme_summary">เลือกชุดสีที่จะใช้ในตัวแก้ไข</string>
+  <string name="idepref_general_uiMode">โหมด UI</string>
+  <string name="idepref_general_uiMode_summary">เลือกโหมด UI สำหรับ IDE</string>
+  <string name="uiMode_light">สว่าง</string>
+  <string name="uiMode_dark">มืด</string>
+  <string name="uiMode_system">ตามระบบ</string>
+  <string name="idepref_general_themeSelector_title">ธีม</string>
+  <string name="idepref_general_themeSelector_summary">เลือกธีมสำหรับ Android Code Studio (ต้องรีสตาร์ท)</string>
+  <string name="idepref_general_projectConfig">การกำหนดค่าโปรเจกต์</string>
+  <string name="msg_app_launch_failed">เปิดใช้งานล้มเหลว ติดตั้งแอปพลิเคชันก่อน</string>
+  <string name="idepref_java_diagnosticEnabled_title">เปิดใช้งานการวินิจฉัย</string>
+  <string name="idepref_java_diagnosticsEnabled_summary">(ทดลอง) ไฟล์ซอร์ส Java ควรได้รับการวิเคราะห์เพื่อหาข้อผิดพลาดหรือไม่</string>
+  <string name="title_reload_color_schemes">โหลดชุดสีใหม่</string>
+  <string name="msg_dir_picker_failed">ล้มเหลวในการเริ่มตัวเลือกไดเร็กทอรี : %1$s</string>
+  <string name="msg_tooling_server_unavailable">เซิร์ฟเวอร์ Tooling API ไม่พร้อมใช้งาน ตรวจสอบผลลัพธ์การสร้างและบันทึก IDE เพื่อดูข้อผิดพลาด</string>
+  <string name="idepref_deleteEmptyLines_title">ลบบรรทัดว่างเมื่อกด backspace</string>
+  <string name="idepref_deleteEmptyLines_summary">ตัวแก้ไขควรลบบรรทัดว่างเมื่อเกิดเหตุการณ์ปุ่ม backspace เดียวหรือไม่</string>
+  <string name="idepref_deleteTabs_title">ลบแท็บเมื่อกด backspace</string>
+  <string name="idepref_deleteTabs_summary">เมื่อเปิดใช้งาน ตัวแก้ไขจะลบช่องว่างเท่ากับความกว้างของแท็บเมื่อกดปุ่ม backspace</string>
+  <string name="git_clone_branch">สาขา (ไม่บังคับ)</string>
+  <string name="git_clone_options">ตัวเลือกการโคลน</string>
+  <string name="git_clone_custom_options">ตัวเลือกที่กำหนดเอง (เช่น --filter=blob:none)</string>
+  <string name="git_clone_invalid_url">URL ของที่เก็บไม่ถูกต้อง</string>
+
+  <string name="btn_sync">ซิงค์</string>
+  <string name="btn_ignore_changes">ละเว้นการเปลี่ยนแปลงเหล่านี้</string>
+  <string name="title_fix_imports">แก้ไขการนำเข้า</string>
+  <string name="msg_no_unresolved_classes">ไม่พบชื่อคลาสที่ไม่ได้รับการแก้ไข</string>
+  <string name="title_class_chooser">อันไหน %1$s?</string>
+
+  <string name="title_app_logs">บันทึกแอป</string>
+  <string name="action_hide_system_logs">ซ่อนบันทึกระบบ</string>
+  <string name="action_show_system_logs">แสดงบันทึกระบบ</string>
+  <string name="action_filter_by_tag">กรองตามแท็ก</string>
+  <string name="action_search">ค้นหา</string>
+  <string name="action_clear">ล้าง</string>
+  <string name="action_apply">นำไปใช้</string>
+  <string name="action_clear_filter">ล้างตัวกรอง</string>
+  <string name="action_clear_search">ล้างการค้นหา</string>
+  <string name="title_filter_by_tag">กรองตามแท็ก</string>
+  <string name="title_search_logs">ค้นหาบันทึก</string>
+  <string name="hint_tag_filter">ป้อนชื่อแท็ก (เว้นว่างเพื่อล้างตัวกรอง)</string>
+  <string name="hint_search_logs">ค้นหาในแท็กและข้อความ</string>
+
+  <string name="ai_agent_note">
+    <![CDATA[
+<b>🚨 ประกาศสำคัญ</b>
+  <br>
+    <br>
+ตัวแทน AI นี้ได้รับการออกแบบมาเพื่อช่วยเหลือคุณในการพัฒนาแอปพลิเคชัน Android โดยตรงภายในสภาพแวดล้อม Android Code Studio แม้ว่าจะมุ่งมั่นเพื่อความแม่นยำ แต่โปรดทราบว่า AI อาจสร้างโค้ดที่มีข้อผิดพลาด แนะนำแนวทางปฏิบัติที่ล้าสมัย หรือตีความข้อกำหนดที่ซับซ้อนผิดพลาดได้<br>
+        <br>
+
+          <b>✅ เพื่อให้ได้ผลลัพธ์ที่ดีที่สุด โปรดปฏิบัติตามแนวทางเหล่านี้:</b>
+          <br>
+• 📝 <b>ระบุให้ชัดเจน:</b> ระบุเป้าหมายของคุณอย่างชัดเจน (เช่น "เพิ่มปุ่มที่เปิดกิจกรรมใหม่")<br>
+• 🧠 <b>ให้บริบท:</b> รวมข้อมูลโค้ดที่เกี่ยวข้อง ข้อความแสดงข้อผิดพลาด หรือผลลัพธ์ logcat<br>
+• 🚫 <b>หลีกเลี่ยงคำทักทาย:</b> โปรด <u>อย่า</u> เริ่มต้นข้อความของคุณด้วยคำทักทาย เช่น "หวัดดี" "สวัสดี" หรือ "เฮ้" แทนที่จะเป็นอย่างนั้น ให้เข้าสู่คำขอของคุณโดยตรงเพื่อช่วยให้ AI ตอบสนองได้เร็วขึ้นและแม่นยำยิ่งขึ้น<br>
+• 🛠️ <b>สำคัญ:</b> ตรวจสอบให้แน่ใจเสมอว่าได้เปิดไฟล์ของคุณในตัวแก้ไขโค้ด เพื่อให้ในกรณีที่มีการตอบสนองที่ไม่ดีหรือเสียหาย คุณสามารถเลิกทำการเปลี่ยนแปลงได้อย่างง่ายดาย<br>
+• 🔄 <b>รีเซ็ตบริบทหลังจากสำเร็จ:</b> เมื่อคุณทำคำขอเสร็จสิ้นและตรงตามความต้องการของคุณแล้ว ให้กดปุ่มส่งข้อความค้างไว้และดำเนินการ <u>รีเซ็ตบริบทอย่างหนัก</u> สิ่งนี้ช่วยให้เริ่มต้นใหม่และป้องกันไม่ให้ AI ติดอยู่กับคำขอก่อนหน้า<br>
+                      <br>
+
+⚡ ตรวจสอบและทดสอบโค้ดที่สร้างขึ้นทั้งหมดอย่างรอบคอบก่อนสร้างโปรเจกต์ของคุณเสมอ<br>
+                          <br>
+
+*<b>เคล็ดลับ:</b> กดปุ่มส่งข้อความค้างไว้เพื่อจัดการบริบท AI
+]]></string>
+
+  <string name="restart_app_title">จำเป็นต้องรีสตาร์ท</string>
+  <string name="restart_app_message">แอปพลิเคชันจำเป็นต้องรีสตาร์ทเพื่อใช้การเปลี่ยนแปลง คุณต้องการรีสตาร์ททันทีหรือไม่?</string>
+  <string name="restart_action">รีสตาร์ท</string>
+  <string name="cancel_action">ยกเลิก</string>
+
+  <string name="permlab_bind_logger_service">ผูกกับบริการบันทึก</string>
+  <string name="permdesc_bind_logger_service">อนุญาตให้แอปพลิเคชันนี้ผูกกับบริการบันทึกของ Android Code Studio สิทธิ์นี้จำเป็นสำหรับ Android Code Studio ในการอ่านบันทึกของแอปพลิเคชันนี้</string>
+  <string name="wizard_module_name">ชื่อโมดูล</string>
+  <string name="wizard_module_type">ประเภทโมดูล</string>
+  <string name="msg_invalid_module_name">ชื่อโมดูล Gradle ไม่ถูกต้อง</string>
+  <string name="msg_value_empty">ค่าว่างเปล่า</string>
+  <string name="msg_file_not_exist">ไฟล์ไม่มีอยู่</string>
+  <string name="msg_path_must_be_file">ต้องเป็นพาธไปยังไฟล์</string>
+  <string name="msg_classname_with_keywords">ชื่อคลาสมีคำหลัก</string>
+  <string name="msg_path_must_be_dir">ต้องเป็นพาธไปยังไดเร็กทอรี</string>
+  <string name="msg_invalid_layout_name">ชื่อไฟล์เลย์เอาต์ไม่ถูกต้อง</string>
+  <string name="msg_invalid_project_details">รายละเอียดโปรเจกต์ไม่ถูกต้อง</string>
+  <string name="msg_use_kts">ใช้ Kotlin Script (.kts) สำหรับไฟล์สร้าง Gradle</string>
+  <string name="msg_use_ndk">เพิ่มเทมเพลต C++ สำหรับโปรเจกต์นี้</string>
+  <string name="title_privacy">ความเป็นส่วนตัว</string>
+  <string name="title_androidide_statistics">สถิติ ACS</string>
+  <string name="msg_androidide_statistics">ช่วยฉันปรับปรุง Android Code Studio โดยการให้สถิติแบบไม่ระบุชื่อ ฉันรวบรวมข้อมูลพื้นฐานเกี่ยวกับอุปกรณ์ของคุณเพื่อสถิติฐานผู้ใช้เท่านั้น ข้อมูลที่แน่นอนที่แชร์สามารถดูได้ในการตั้งค่า ข้อมูลของคุณปลอดภัยและไม่ถูกแชร์กับบริการของบุคคลที่สาม คุณสามารถเลือกไม่เข้าร่วมได้ตลอดเวลาในการตั้งค่า</string>
+  <string name="summary_anonymous_usage_stats">สถิติการใช้งานแบบไม่ระบุชื่อ</string>
+  <string name="idepref_stats_optIn_title">การรวบรวมสถิติ</string>
+  <string name="idepref_stats_optIn_summary">อนุญาตให้รวบรวมเมตริกการติดตั้งและสถิติอุปกรณ์ (ไม่ระบุชื่ออย่างสมบูรณ์)</string>
+  <string name="title_unique_id">ID เฉพาะ</string>
+  <string name="title_device">อุปกรณ์</string>
+  <string name="title_app_version">เวอร์ชันแอป</string>
+  <string name="title_country">ประเทศ</string>
+  <string name="title_cpu_arch">สถาปัตยกรรม CPU</string>
+  <string name="title_preview_data">ดูตัวอย่างข้อมูล</string>
+  <string name="title_android_version">เวอร์ชัน Android</string>
+  <string name="btn_opt_in">เลือกเข้าร่วม</string>
+  <string name="title_developer_options">ตัวเลือกสำหรับนักพัฒนา</string>
+  <string name="idepref_devOptions_summary">ตัวเลือกการทดลอง/การแก้ไขจุดบกพร่องสำหรับ AndroidCS</string>
+  <string name="idepref_group_debugging">การแก้ไขจุดบกพร่อง</string>
+  <string name="idepref_devOptions_dumpLogs_title">Dump logs</string>
+  <string name="idepref_devOptions_dumpLogs_summary">Dump บันทึก AndroidCS ไปยัง $HOME/.androidide/logs</string>
+  <string name="msg_emptyview_applogs">รันรูปแบบการดีบักของแอปพลิเคชันของคุณเพื่อดูบันทึกที่นี่</string>
+  <string name="msg_logsender_disabled">LogSender ถูกปิดใช้งาน คุณสามารถเปิดใช้งานได้ในการตั้งค่า</string>
+  <string name="msg_emptyview_idelogs">บันทึกจาก IDE จะแสดงที่นี่</string>
+  <string name="msg_emptyview_diagnostics">เปิดไฟล์เพื่อดูผลการวินิจฉัย</string>
+  <string name="msg_emptyview_buildoutput">"สร้างแอปพลิเคชันหรือรันงานเพื่อดูผลลัพธ์การสร้างที่นี่ "</string>
+  <string name="msg_codeaction_failed">ล้มเหลวในการดำเนินการกับโค้ด</string>
+  <string name="idepref_devOptions_enableLogsender_title">เปิดใช้งาน LogWire</string>
+  <string name="idepref_devOptions_enableLogsender_summary">เมื่อปิดใช้งาน บันทึกจากแอปพลิเคชันจะไม่แสดงใน AndroidCS</string>
+  <string name="title_build_variants">รูปแบบการสร้าง</string>
+  <string name="title_apply">นำไปใช้</string>
+  <string name="title_discard">ทิ้ง</string>
+  <string name="msg_build_variants_fetch_failed">ล้มเหลวในการดึงรูปแบบการสร้าง</string>
+  <string name="title_choose_application">เลือกแอปพลิเคชัน</string>
+  <string name="err_selected_variant_not_found">ไม่พบรูปแบบการสร้างที่เลือก</string>
+  <string name="title_disconnect_log_senders">ตัดการเชื่อมต่อผู้ส่งบันทึก</string>
+  <string name="title_begin_long_select">เริ่มเลือกแบบยาว</string>
+  <string name="idepref_editor_stickScroll_title">การเลื่อนแบบติดหนึบ</string>
+  <string name="idepref_editor_stickyScroll_summary">แสดงขอบเขตปัจจุบันที่ด้านบนขณะเลื่อนตัวแก้ไข</string>
+  <string name="idepref_launchAppAfterInstall_title">เปิดแอปหลังจากติดตั้ง</string>
+  <string name="idepref_launchAppAfterInstall_summary">หากเปิดใช้งาน IDE จะ (โดยไม่ต้องยืนยัน) เปิดแอปพลิเคชันทันทีหลังจากติดตั้ง</string>
+  <string name="title_run_options">ตัวเลือกการรัน</string>
+  <string name="err_cannot_determine_package">ไม่สามารถรันแอปพลิเคชันได้ ไม่สามารถระบุชื่อแพ็คเกจได้</string>
+  <string name="msg_launch_failure_no_app_module">ไม่สามารถรันแอปพลิเคชันได้ ไม่พบโมดูลแอปพลิเคชันในโปรเจกต์</string>
+  <string name="title_launch_app">เปิดแอป</string>
+  <string name="title_ide_configurations">การกำหนดค่า IDE</string>
+  <string name="title_experiment_flavor">การทดลอง</string>
+  <string name="msg_experimental_flavor">คุณกำลังใช้ Android Code Studio รุ่น %1$s บนอุปกรณ์ %2$s การกำหนดค่านี้นี้อาจใช้งานได้ แต่จะส่งผลให้ประสิทธิภาพลดลงและอาจมีช่องโหว่ด้านความปลอดภัย โปรดหลีกเลี่ยงการใช้การกำหนดค่านี้นี้เมื่อทำได้</string>
+  <string name="idepref_editor_pinLineNumbers_title">ตรึงหมายเลขบรรทัด</string>
+  <string name="idepref_editor_pinLineNumbers_summary">ตัวแก้ไขควรตรึงแผงหมายเลขบรรทัดเมื่อเลื่อนในแนวนอนหรือไม่</string>
+  <string name="theme_blue_wave">คลื่นสีน้ำเงิน</string>
+  <string name="theme_sunny_glow">แสงแดดสดใส</string>
+  <string name="theme_greenish">เขียวขจี</string>
+  <string name="theme_vscode">VS Code</string>
+  <string name="theme_material_you">Material You</string>
+  <string name="idepref_general_localeSelector_title">ภาษา</string>
+  <string name="idepref_general_localeSelector_summary">เลือกภาษาสำหรับ AndroidCS</string>
+  <string name="locale_system_default">ค่าเริ่มต้นของระบบ</string>
+  <string name="msg_project_dir_inaccessible">ไดเร็กทอรีโปรเจกต์ไม่สามารถเข้าถึงได้</string>
+  <string name="msg_file_is_not_dir">ไฟล์ที่เลือกไม่ใช่ไดเร็กทอรี</string>
+  <string name="msg_project_dir_doesnt_exist">ไดเร็กทอรีโปรเจกต์ไม่มีอยู่</string>
+  <string name="msg_files_being_saved">การดำเนินการบันทึกไฟล์กำลังดำเนินการอยู่!</string>
+  <string name="title_install_tools">การติดตั้ง SDK</string>
+  <string name="subtitle_install_tools">ติดตั้งเครื่องมือการพัฒนา</string>
+  <string name="msg_install_tools">ต้องติดตั้งเครื่องมือการพัฒนาเพื่อให้ IDE ทำงานได้ การคลิกปุ่มเสร็จสิ้นจะเปิดเทอร์มินัลเพื่อติดตั้งเครื่องมือ ในการติดตั้ง ให้ทำตามคำแนะนำ <![CDATA[ <a href="https://docs.androidide.com/tutorials/get-started.html">ที่นี่</a>.<br />
+  <br />หรืออ่าน <a href="https://docs.androidide.com/">เอกสารประกอบ</a>]]>.</string>
+  <string name="greeting_title">ยินดีต้อนรับ</string>
+  <string name="greeting_subtitle">เรียนรู้ สร้าง เปิดตัว ทั้งหมดบน Android ของคุณ</string>
+  <string name="title_grant">อนุญาต</string>
+  <string name="permission_title_storage">พื้นที่จัดเก็บ</string>
+  <string name="permission_desc_storage">จำเป็นเพื่อเข้าถึงไฟล์โปรเจกต์</string>
+  <string name="permission_desc_install_packages">อนุญาตให้ติดตั้ง APK ที่สร้างด้วย Android Code Studio</string>
+  <string name="permission_title_install_packages">ติดตั้งแพ็คเกจ</string>
+  <string name="onboarding_title_permissions">สิทธิ์</string>
+  <string name="onboarding_subtitle_permissions">AndroidCS ต้องการสิทธิ์ดังต่อไปนี้</string>
+  <string name="msg_grant_permissions">โปรดให้สิทธิ์เพื่อดำเนินการต่อ</string>
+  <string name="msg_no_internet">ดูเหมือนว่าคุณกำลังออฟไลน์ ตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ</string>
+  <string name="msg_connected_to_cellular">ระวัง! คุณกำลังใช้ข้อมูลมือถือ</string>
+  <string name="msg_connected_to_metered_connection">ระวัง! คุณอยู่บนเครือข่ายแบบมิเตอร์</string>
+  <string name="msg_disable_background_data_restriction">ปิดใช้งานการจำกัดข้อมูลพื้นหลังเพื่อหลีกเลี่ยงความล้มเหลวในการติดตั้ง</string>
+  <string name="msg_cannot_create_terminal_session">ไม่สามารถสร้างเซสชันเทอร์มินัลได้</string>
+  <string name="action_auto_install">การติดตั้งอัตโนมัติ</string>
+  <string name="action_manual_install">การติดตั้งด้วยตนเอง</string>
+  <string name="hint_android_sdk_version">เวอร์ชัน Android SDK</string>
+  <string name="hint_android_ndk_version">เวอร์ชัน Android NDK</string>
+  <string name="hin_jdk_version">เวอร์ชัน JDK</string>
+  <string name="action_install_git">ติดตั้ง Git</string>
+  <string name="action_install_openssh">ติดตั้ง OpenSSH</string>
+  <string name="action_install_ndk">ติดตั้ง AndroidNDK</string>
+  <string name="msg_terminal_new_sessions_disabled">ไม่สามารถสร้างเซสชันได้ เซสชันใหม่ถูกปิดใช้งาน!</string>
+  <string name="title_install_location_error">ข้อผิดพลาดตำแหน่งการติดตั้ง</string>
+  <string name="title_unsupported_user">ผู้ใช้ที่ไม่รองรับ</string>
+  <string name="title_socials">โซเชียล</string>
+  <string name="title_contributors">ผู้ร่วมสมทบ</string>
+  <string name="summary_contributors">ผู้ร่วมสมทบชุมชนชั้นนำ</string>
+  <string name="title_github_contributors">ผู้ร่วมสมทบ GitHub</string>
+  <string name="title_crowdin_translators">นักแปล Crowdin</string>
+  <string name="title_misc">อื่นๆ</string>
+  <string name="title_contribute">มีส่วนร่วม</string>
+  <string name="summary_contribute">ไม่ใช่แค่ IDE แต่เป็นชุมชน มีส่วนร่วมกับโค้ด ไอเดีย และความหลงใหลให้กับ AndroidCS</string>
+  <string name="msg_app_unavailable_for_intent">ไม่มีแอปพลิเคชันที่พร้อมใช้งานเพื่อจัดการ intent</string>
+  <string name="title_open_source_licenses">ใบอนุญาตโอเพนซอร์ส</string>
+  <string name="summary_open_source_licenses">ดูใบอนุญาตโอเพนซอร์ส</string>
+  <string name="idepref_jdkVersion_title">เวอร์ชัน JDK</string>
+  <string name="idepref_jdkVersion_summary">ที่เลือกปัจจุบัน: %1$s (ต้องรีสตาร์ทหากเปลี่ยน)</string>
+  <string name="lsp_update_check_failed">ตรวจสอบการอัปเดตล้มเหลว: %s</string>
+  <string name="lsp_update_available_title">มีการอัปเดตส่วนประกอบ</string>
+  <string name="lsp_update_available_description">มีการอัปเดตใหม่สำหรับ Kotlin language server v%s</string>
+  <string name="lsp_update_button">อัปเดต</string>
+  <string name="lsp_download_url_unavailable">URL ดาวน์โหลดไม่พร้อมใช้งาน</string>
+  <string name="lsp_downloading_title">กำลังดาวน์โหลด</string>
+  <string name="lsp_initializing_download">กำลังเริ่มต้นการดาวน์โหลด...</string>
+  <string name="lsp_downloading_progress">กำลังดาวน์โหลด... %d%%</string>
+  <string name="lsp_download_complete_title">ดาวน์โหลดเสร็จสมบูรณ์</string>
+  <string name="lsp_cleaning_old_installation">กำลังล้างการติดตั้งเก่า...</string>
+  <string name="lsp_extracting_files">กำลังแตกไฟล์...</string>
+  <string name="lsp_extracting_progress">กำลังแตกไฟล์... (%d ไฟล์)</string>
+  <string name="lsp_installation_complete_title">การติดตั้งเสร็จสมบูรณ์</string>
+  <string name="lsp_installation_complete_description">Kotlin language server v%s ติดตั้งสำเร็จแล้ว</string>
+  <string name="lsp_installation_failed_title">การติดตั้งล้มเหลว</string>
+  <string name="lsp_error_message">ข้อผิดพลาด: %s</string>
+  <string name="lsp_unknown_error">ข้อผิดพลาดที่ไม่รู้จัก</string>
+  <string name="lsp_cancel_button">ยกเลิก</string>
+  <string name="lsp_update_success_title">อัปเดตสำเร็จ</string>
+  <string name="lsp_update_success_description">Kotlin language server v%s ได้รับการติดตั้งสำเร็จแล้ว</string>
+  <string name="lsp_ok_button">ตกลง</string>
+  <string name="lsp_installation_failed_description">ล้มเหลวในการติดตั้งการอัปเดต: %s</string>
+  <string name="lsp_retry_button">ลองใหม่</string>
+</resources>

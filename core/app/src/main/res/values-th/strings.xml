@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  This file is part of AndroidIDE.
+  ~
+  ~  AndroidIDE is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  AndroidIDE is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~   along with AndroidIDE.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+  <!--  Required by F-Droid-->
+  <!-- <string name="app_name" translatable="false">AndroidIDE</string> -->
+  <string name="app_name" translatable="false">Android Code Studio</string>
+
+  <!-- Asset Studio -->
+  <string name="asset_studio_title">สตูดิโอสินทรัพย์</string>
+  <string name="asset_studio_subtitle">เครื่องมือสร้างภาพวาดและไอคอน</string>
+  <string name="asset_studio_launch">เปิดสตูดิโอ</string>
+  <string name="asset_studio_create_drawable">สร้างภาพวาด (Drawable)</string>
+  <string name="asset_studio_create_icon">สร้างไอคอน</string>
+  <string name="asset_studio_import_image">นำเข้ารูปภาพ</string>
+  <string name="asset_studio_recent_assets">สินทรัพย์ล่าสุด</string>
+  <string name="asset_studio_quick_actions">การดำเนินการด่วน</string>
+  <string name="asset_studio_default_path">res/drawable</string>
+  <string name="asset_studio_launch_description">เปิดหน้าต่างสตูดิโอสินทรัพย์แบบเต็ม</string>
+
+  <!-- Sub-Module Maker -->
+  <string name="sub_module_maker_title">ตัวสร้างโมดูลย่อย</string>
+  <string name="sub_module_maker_subtitle">สร้างโมดูลย่อยใหม่สำหรับโปรเจกต์ของคุณ</string>
+  <string name="sub_module_configuration">การกำหนดค่าโมดูล</string>
+  <string name="sub_module_language">ภาษาโปรแกรม</string>
+  <string name="sub_module_kotlin">Kotlin</string>
+  <string name="sub_module_java">Java</string>
+  <string name="sub_module_name_hint">ป้อนชื่อโมดูล (เช่น feature, utils)</string>
+  <string name="sub_module_name_valid">ชื่อโมดูลใช้ได้</string>
+  <string name="sub_module_name_invalid">ชื่อโมดูลไม่ถูกต้อง</string>
+  <string name="sub_module_create">สร้างโมดูล</string>
+  <string name="sub_module_created_success">สร้างโมดูล \'%1$s\' สำเร็จแล้ว!</string>
+  <string name="sub_module_created_error">ล้มเหลวในการสร้างโมดูล: %1$s</string>
+  <string name="sub_module_info_title">เกี่ยวกับโมดูลย่อย</string>
+  <string name="sub_module_info_description">โมดูลย่อยช่วยจัดระเบียบโปรเจกต์ของคุณให้เป็นส่วนประกอบที่เล็กลงและจัดการได้ง่าย แต่ละโมดูลสามารถมีการพึ่งพาและการกำหนดค่าการสร้างของตัวเองได้</string>
+
+  <!-- Terminal -->
+  <string name="title_terminal">เทอร์มินัล</string>
+  <string name="terminal_bstab">เทอร์มินัล</string>
+  <string name="terminal_new_session">เทอร์มินัลใหม่</string>
+  <string name="terminal_close_session">ปิดเทอร์มินัล</string>
+  <string name="terminal_empty_state">ไม่มีเซสชันเทอร์มินัล</string>
+  <string name="terminal_empty_message">ไม่มีเซสชันเทอร์มินัลที่เปิดอยู่ สร้างเซสชันใหม่เพื่อเริ่มต้น</string>
+  <string name="terminal_create_first">สร้างเทอร์มินัล</string>
+
+  <string name="edit">แก้ไข</string>
+
+</resources>
