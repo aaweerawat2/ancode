@@ -32,6 +32,7 @@ import com.tom.rv2ide.artificial.secrets.ApiKey
 import java.io.File
 import kotlinx.coroutines.delay
 import com.tom.rv2ide.artificial.dialogs.ProviderSwitchDialog
+import com.tom.rv2ide.terminal.TerminalBridge
 
 class AIAgentManager(private val context: Context) {
 
@@ -41,6 +42,7 @@ class AIAgentManager(private val context: Context) {
     private var currentProviderId: String = "gemini"
     private var currentAgent: AIAgent? = null
     private val providerSwitchDialog = ProviderSwitchDialog(context)
+    private var terminalBridge: TerminalBridge? = null
 
     init {
         Gemini.registerAgent()
@@ -127,6 +129,10 @@ class AIAgentManager(private val context: Context) {
         return true
     }
 
+    fun setTerminalBridge(bridge: TerminalBridge) {
+        this.terminalBridge = bridge
+    }
+
     fun clearConversation() {
         currentAgent?.clearConversation()
     }
@@ -159,11 +165,12 @@ class AIAgentManager(private val context: Context) {
                 result.fold(
                     onSuccess = { response ->
                         
-                        if (response.contains("FILE_TO_MODIFY:")) {
-                            callback.onProcessing("Modifying files...")
-                            val modifications = processModifications(response, previousFileStates, callback)
+                        if (response.contains("FILE_TO_MODIFY:") || response.contains("EXECUTE_COMMAND:")) {
+                            callback.onProcessing("Executing actions...")
+                            val (modifications, commandOutput) = processModifications(response, previousFileStates, callback)
+                            val finalResponse = if (commandOutput.isNotEmpty()) "$response\n$commandOutput" else response
 
-                            if (modifications.isNotEmpty()) {
+                            if (modifications.isNotEmpty() || commandOutput.isNotEmpty()) {
                                 val allSuccessful = modifications.all { it.writeResult is FileWriteResult.Success }
 
                                 if (allSuccessful) {
@@ -179,7 +186,7 @@ class AIAgentManager(private val context: Context) {
                                     }
 
                                     val summary = createSummary(results)
-                                    callback.onSuccess(response, results, summary)
+                                    callback.onSuccess(finalResponse, results, summary)
                                     success = true
                                 } else {
                                     callback.onProcessing("Some files failed. Retrying...")
@@ -187,7 +194,7 @@ class AIAgentManager(private val context: Context) {
                                     delay(1500)
                                 }
                             } else {
-                                callback.onProcessing("No files were modified. Retrying...")
+                                callback.onProcessing("No actions were taken. Retrying...")
                                 currentAgent?.incrementAttemptCount()
                                 delay(1500)
                             }
@@ -286,68 +293,99 @@ class AIAgentManager(private val context: Context) {
         response: String,
         previousFileStates: Map<String, String>,
         callback: AIAgentCallback
-    ): List<BaseFileModification> {
+    ): Pair<List<BaseFileModification>, String> {
         val modifications = mutableListOf<BaseFileModification>()
+        val outputLog = StringBuilder()
         val parser = SnippetParser()
 
-        if (response.contains("FILE_TO_MODIFY:")) {
-            val lines = response.lines()
-            var currentFile: String? = null
-            val contentBuilder = StringBuilder()
-            var inContent = false
+        val lines = response.lines()
+        var currentFile: String? = null
+        val contentBuilder = StringBuilder()
+        var inContent = false
 
-            for (line in lines) {
-                if (line.startsWith("FILE_TO_MODIFY:")) {
-                    if (currentFile != null && contentBuilder.isNotEmpty()) {
-                        val fileName = File(currentFile).name
-                        callback.onFileModifying(currentFile, fileName)
+        for (line in lines) {
+            if (line.trim().startsWith("EXECUTE_COMMAND:")) {
+                // Close any pending file
+                if (currentFile != null && contentBuilder.isNotEmpty()) {
+                    val fileName = File(currentFile).name
+                    callback.onFileModifying(currentFile, fileName)
 
-                        val rawContent = contentBuilder.toString().trim()
-                        val cleanedContent = parser.cleanFileContent(rawContent)
-                        val previousContent = previousFileStates[currentFile]
+                    val rawContent = contentBuilder.toString().trim()
+                    val cleanedContent = parser.cleanFileContent(rawContent)
+                    val previousContent = previousFileStates[currentFile]
 
-                        val writeResult = currentAgent?.writeFile(currentFile, cleanedContent)
-                            ?: FileWriteResult.Error("No agent initialized")
+                    val writeResult = currentAgent?.writeFile(currentFile, cleanedContent)
+                        ?: FileWriteResult.Error("No agent initialized")
 
-                        val success = writeResult is FileWriteResult.Success
-                        currentAgent?.recordModification(currentFile, previousContent, cleanedContent, success)
+                    val success = writeResult is FileWriteResult.Success
+                    currentAgent?.recordModification(currentFile, previousContent, cleanedContent, success)
 
-                        callback.onFileModified(currentFile, fileName, success)
-                        delay(300)
+                    callback.onFileModified(currentFile, fileName, success)
+                    delay(300)
 
-                        modifications.add(BaseFileModification(currentFile, cleanedContent, writeResult))
-                    }
-
-                    currentFile = line.substringAfter("FILE_TO_MODIFY:").trim()
-                    contentBuilder.clear()
-                    inContent = true
-                } else if (inContent) {
-                    contentBuilder.append(line).append("\n")
+                    modifications.add(BaseFileModification(currentFile, cleanedContent, writeResult))
                 }
-            }
+                currentFile = null
+                contentBuilder.clear()
+                inContent = false
 
-            if (currentFile != null && contentBuilder.isNotEmpty()) {
-                val fileName = File(currentFile).name
-                callback.onFileModifying(currentFile, fileName)
+                val command = line.substringAfter("EXECUTE_COMMAND:").trim()
+                callback.onProcessing("Executing: $command")
+                val output = terminalBridge?.executeCommand(command) ?: "Error: No Terminal Bridge connected"
+                callback.onProcessing("Command executed")
 
-                val rawContent = contentBuilder.toString().trim()
-                val cleanedContent = parser.cleanFileContent(rawContent)
-                val previousContent = previousFileStates[currentFile]
+                outputLog.append("\n\n> Executed: $command\n")
+                outputLog.append("> Output:\n$output\n")
+            } else if (line.startsWith("FILE_TO_MODIFY:")) {
+                if (currentFile != null && contentBuilder.isNotEmpty()) {
+                    val fileName = File(currentFile).name
+                    callback.onFileModifying(currentFile, fileName)
 
-                val writeResult = currentAgent?.writeFile(currentFile, cleanedContent)
-                    ?: FileWriteResult.Error("No agent initialized")
+                    val rawContent = contentBuilder.toString().trim()
+                    val cleanedContent = parser.cleanFileContent(rawContent)
+                    val previousContent = previousFileStates[currentFile]
 
-                val success = writeResult is FileWriteResult.Success
-                currentAgent?.recordModification(currentFile, previousContent, cleanedContent, success)
+                    val writeResult = currentAgent?.writeFile(currentFile, cleanedContent)
+                        ?: FileWriteResult.Error("No agent initialized")
 
-                callback.onFileModified(currentFile, fileName, success)
-                delay(300)
+                    val success = writeResult is FileWriteResult.Success
+                    currentAgent?.recordModification(currentFile, previousContent, cleanedContent, success)
 
-                modifications.add(BaseFileModification(currentFile, cleanedContent, writeResult))
+                    callback.onFileModified(currentFile, fileName, success)
+                    delay(300)
+
+                    modifications.add(BaseFileModification(currentFile, cleanedContent, writeResult))
+                }
+
+                currentFile = line.substringAfter("FILE_TO_MODIFY:").trim()
+                contentBuilder.clear()
+                inContent = true
+            } else if (inContent) {
+                contentBuilder.append(line).append("\n")
             }
         }
 
-        return modifications
+        if (currentFile != null && contentBuilder.isNotEmpty()) {
+            val fileName = File(currentFile).name
+            callback.onFileModifying(currentFile, fileName)
+
+            val rawContent = contentBuilder.toString().trim()
+            val cleanedContent = parser.cleanFileContent(rawContent)
+            val previousContent = previousFileStates[currentFile]
+
+            val writeResult = currentAgent?.writeFile(currentFile, cleanedContent)
+                ?: FileWriteResult.Error("No agent initialized")
+
+            val success = writeResult is FileWriteResult.Success
+            currentAgent?.recordModification(currentFile, previousContent, cleanedContent, success)
+
+            callback.onFileModified(currentFile, fileName, success)
+            delay(300)
+
+            modifications.add(BaseFileModification(currentFile, cleanedContent, writeResult))
+        }
+
+        return Pair(modifications, outputLog.toString())
     }
 
     private fun formatErrorMessage(error: Throwable): String {

@@ -65,6 +65,10 @@ import com.tom.rv2ide.utils.resolveAttr
 import com.tom.rv2ide.utils.showOnUiThread
 import com.tom.rv2ide.utils.withIcon
 import com.tom.rv2ide.viewmodel.BuildVariantsViewModel
+import com.termux.app.TermuxService
+import android.content.ServiceConnection
+import android.content.ComponentName
+import android.os.IBinder
 import java.io.File
 import java.util.concurrent.CompletableFuture
 import java.util.regex.Pattern
@@ -103,6 +107,20 @@ abstract class ProjectHandlerActivity : BaseEditorActivity() {
   protected val mBuildEventListener = EditorBuildEventListener()
 
   private val buildServiceConnection = GradleBuildServiceConnnection()
+
+  private var termuxService: TermuxService? = null
+
+  private val termuxServiceConnection = object : ServiceConnection {
+    override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
+      termuxService = (service as TermuxService.LocalBinder).service
+    }
+
+    override fun onServiceDisconnected(name: ComponentName?) {
+      termuxService = null
+    }
+  }
+
+  fun getTermuxService(): TermuxService? = termuxService
 
   companion object {
 
@@ -218,6 +236,12 @@ abstract class ProjectHandlerActivity : BaseEditorActivity() {
         mBuildEventListener.release()
         editorViewModel.isBoundToBuildSerice = false
       }
+
+      try {
+        unbindService(termuxServiceConnection)
+      } catch (e: Exception) {
+        log.error("Unable to unbind termux service")
+      }
     }
   }
 
@@ -290,6 +314,20 @@ abstract class ProjectHandlerActivity : BaseEditorActivity() {
       log.info("Bind request for Gradle build service was successful...")
     } else {
       log.error("Gradle build service doesn't exist or the IDE is not allowed to access it.")
+    }
+
+    try {
+      if (bindService(
+        Intent(this, TermuxService::class.java),
+        termuxServiceConnection,
+        BIND_AUTO_CREATE
+      )) {
+        log.info("Bind request for Termux service was successful")
+      } else {
+        log.error("Failed to bind to Termux service")
+      }
+    } catch (e: Exception) {
+      log.error("Error binding Termux service: ${e.message}")
     }
 
     initLspClient()

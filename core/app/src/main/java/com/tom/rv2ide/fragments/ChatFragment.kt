@@ -22,6 +22,8 @@ import com.tom.rv2ide.managers.CodeCompletionManager
 import com.tom.rv2ide.handlers.AIRequestHandler
 import com.tom.rv2ide.utils.ProjectHelper.getProjectRoot
 import com.tom.rv2ide.activities.editor.EditorHandlerActivity
+import com.tom.rv2ide.activities.editor.ProjectHandlerActivity
+import com.tom.rv2ide.terminal.TerminalBridge
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -86,6 +88,7 @@ class ChatFragment(
         super.onResume()
         startFileMonitoring()
         startCompletionStateMonitoring()
+        setupTerminalBridge()
     }
     
     override fun onPause() {
@@ -142,6 +145,27 @@ class ChatFragment(
             getCurrentFile = { getCurrentFile() },
             refreshEditor = { refreshCurrentEditor() }
         )
+
+        setupTerminalBridge()
+    }
+
+    private fun setupTerminalBridge() {
+        try {
+            val activity = requireActivity()
+            if (activity is ProjectHandlerActivity) {
+                val service = activity.getTermuxService()
+                if (service != null) {
+                    val bridge = TerminalBridge(requireContext())
+                    bridge.setService(service)
+                    aiAgent.setTerminalBridge(bridge)
+                    android.util.Log.d("ChatFragment", "Terminal bridge connected")
+                } else {
+                    android.util.Log.w("ChatFragment", "TermuxService not ready yet")
+                }
+            }
+        } catch (e: Exception) {
+            android.util.Log.e("ChatFragment", "Error setting up terminal bridge", e)
+        }
     }
 
     private fun setupListeners() {
