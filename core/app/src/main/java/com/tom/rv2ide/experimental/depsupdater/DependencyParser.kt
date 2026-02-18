@@ -8,9 +8,7 @@ class DependencyParser {
         
         val variables = parseVariables(content)
         
-        val variablePattern = """(implementation|api|compileOnly|runtimeOnly|testImplementation|androidTestImplementation)\s*\(\s*["']([^:]+):([^:]+):\$\{?([a-zA-Z0-9_]+)\}?["']\s*\)""".toRegex()
-        
-        variablePattern.findAll(content).forEach { match ->
+        VARIABLE_PATTERN.findAll(content).forEach { match ->
             val group = match.groupValues[2]
             val name = match.groupValues[3]
             val variableName = match.groupValues[4]
@@ -30,9 +28,7 @@ class DependencyParser {
             }
         }
         
-        val catalogPattern = """(implementation|api|compileOnly|runtimeOnly|testImplementation|androidTestImplementation)\s*\(\s*libs\.([a-zA-Z0-9\.\-_]+)\s*\)""".toRegex()
-        
-        catalogPattern.findAll(content).forEach { match ->
+        CATALOG_PATTERN.findAll(content).forEach { match ->
             val catalogRef = match.groupValues[2]
             val key = "catalog:$catalogRef"
             
@@ -49,9 +45,7 @@ class DependencyParser {
             }
         }
         
-        val implementationPattern = """(implementation|api|compileOnly|runtimeOnly|testImplementation|androidTestImplementation)\s*\(\s*["']([^:]+):([^:]+):([^"'\$]+)["']\s*\)""".toRegex()
-        
-        implementationPattern.findAll(content).forEach { match ->
+        IMPLEMENTATION_PATTERN.findAll(content).forEach { match ->
             val group = match.groupValues[2]
             val name = match.groupValues[3]
             val version = match.groupValues[4]
@@ -75,14 +69,11 @@ class DependencyParser {
     private fun parseVariables(content: String): Map<String, String> {
         val variables = mutableMapOf<String, String>()
         
-        val valPattern = """val\s+([a-zA-Z0-9_]+)\s*=\s*["']([^"']+)["']""".toRegex()
-        val varPattern = """var\s+([a-zA-Z0-9_]+)\s*=\s*["']([^"']+)["']""".toRegex()
-        
-        valPattern.findAll(content).forEach { match ->
+        VAL_PATTERN.findAll(content).forEach { match ->
             variables[match.groupValues[1]] = match.groupValues[2]
         }
         
-        varPattern.findAll(content).forEach { match ->
+        VAR_PATTERN.findAll(content).forEach { match ->
             variables[match.groupValues[1]] = match.groupValues[2]
         }
         
@@ -142,15 +133,10 @@ class DependencyParser {
                             
                             val definition = fullDef.toString()
                             
-                            val groupRegex = """group\s*=\s*"([^"]+)"""".toRegex()
-                            val nameRegex = """name\s*=\s*"([^"]+)"""".toRegex()
-                            val versionRefRegex = """version\.ref\s*=\s*"([^"]+)"""".toRegex()
-                            val versionRegex = """version\s*=\s*"([^"]+)"""".toRegex()
-                            
-                            val groupMatch = groupRegex.find(definition)
-                            val nameMatch = nameRegex.find(definition)
-                            val versionRefMatch = versionRefRegex.find(definition)
-                            val versionMatch = versionRegex.find(definition)
+                            val groupMatch = GROUP_REGEX.find(definition)
+                            val nameMatch = NAME_REGEX.find(definition)
+                            val versionRefMatch = VERSION_REF_REGEX.find(definition)
+                            val versionMatch = VERSION_REGEX.find(definition)
                             
                             if (groupMatch != null && nameMatch != null) {
                                 val group = groupMatch.groupValues[1]
@@ -164,8 +150,7 @@ class DependencyParser {
                                 catalog[libName] = DependencyInfo(group, name, version)
                             }
                         } else {
-                            val stringPattern = """"([^"]+)"""".toRegex()
-                            val matches = stringPattern.findAll(line).toList()
+                            val matches = STRING_PATTERN.findAll(line).toList()
                             if (matches.isNotEmpty()) {
                                 val coordString = matches.last().groupValues[1]
                                 val parts = coordString.split(":")
@@ -181,6 +166,22 @@ class DependencyParser {
         }
         
         return catalog
+    }
+
+    private companion object {
+        val VARIABLE_PATTERN = """(implementation|api|compileOnly|runtimeOnly|testImplementation|androidTestImplementation)\s*\(\s*["']([^:]+):([^:]+):\$\{?([a-zA-Z0-9_]+)\}?["']\s*\)""".toRegex()
+        val CATALOG_PATTERN = """(implementation|api|compileOnly|runtimeOnly|testImplementation|androidTestImplementation)\s*\(\s*libs\.([a-zA-Z0-9\.\-_]+)\s*\)""".toRegex()
+        val IMPLEMENTATION_PATTERN = """(implementation|api|compileOnly|runtimeOnly|testImplementation|androidTestImplementation)\s*\(\s*["']([^:]+):([^:]+):([^"'\$]+)["']\s*\)""".toRegex()
+
+        val VAL_PATTERN = """val\s+([a-zA-Z0-9_]+)\s*=\s*["']([^"']+)["']""".toRegex()
+        val VAR_PATTERN = """var\s+([a-zA-Z0-9_]+)\s*=\s*["']([^"']+)["']""".toRegex()
+
+        val GROUP_REGEX = """group\s*=\s*"([^"]+)"""".toRegex()
+        val NAME_REGEX = """name\s*=\s*"([^"]+)"""".toRegex()
+        val VERSION_REF_REGEX = """version\.ref\s*=\s*"([^"]+)"""".toRegex()
+        val VERSION_REGEX = """version\s*=\s*"([^"]+)"""".toRegex()
+
+        val STRING_PATTERN = """"([^"]+)"""".toRegex()
     }
 }
 
