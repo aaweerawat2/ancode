@@ -50,6 +50,7 @@ public class LocaleProvider {
     putLocale(locales, keys, "ro", "RO"); // Romanian
     putLocale(locales, keys, "ru", "RU"); // Russian
     putLocale(locales, keys, "tr", "TR"); // Turkish
+    putLocale(locales, keys, "th", "TH"); // Thai
     putLocale(locales, keys, "zh", "CN"); // Chinese (Simplified)
 
     SUPPORTED_LOCALES = Collections.unmodifiableMap(locales);
