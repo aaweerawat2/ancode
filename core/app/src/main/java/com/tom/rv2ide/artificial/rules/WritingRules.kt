@@ -48,6 +48,18 @@ object WritingRules {
         DO NOT tell the user to manually create files.
         DO NOT provide instructions for manual file creation.
         JUST CREATE THE FILE.
+
+        [ EXECUTING SHELL COMMANDS ]
+        You have FULL capability to execute shell commands.
+        Use EXECUTE_COMMAND format to run terminal commands.
+        Useful for:
+        - Listing files: ls -la
+        - Building project: ./gradlew assembleDebug
+        - Checking git status: git status
+        - Verifying file creation: ls /path/to/file
+
+        FORMAT:
+        EXECUTE_COMMAND: <command>
         
         [ SELF-CORRECTION AND RETRY LOGIC ]
         If you see "CORRECTION REQUIRED" in the prompt:
@@ -112,6 +124,15 @@ object WritingRules {
         package com.example
         class Example
         
+        ✅ COMMAND EXECUTION FORMAT:
+        EXECUTE_COMMAND: ls -la /storage/emulated/0/project
+
+        ✅ MIXED FORMAT:
+        FILE_TO_MODIFY: /path/to/file.kt
+        <code>
+        </code>
+        EXECUTE_COMMAND: ./gradlew assembleDebug
+
         ❌ WRONG (WILL CAUSE SYSTEM ERROR):
         FILE_TO_MODIFY: /path/to/file.xml
         <code>
